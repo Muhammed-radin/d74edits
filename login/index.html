@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D74 Edits | Login</title>
+
+  <link rel="stylesheet" href="../view/app.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <div class="form-center">
+    <div class="header">
+      <h3>D74 Edits</h3>
+      <p class="subtitle">Login to your account</p>
+    </div>
+    <div class="form">
+      <input type="email" placeholder="Email" id="email">
+      <input type="password" placeholder="Password" id="password">
+      <button id="submit" onclick="document.querySelector('.block-div').style.display = 'block';document.querySelector('.main-preload').style.display = 'block';/*localStorage.setItem('account',{});*/location.href='../explore">Login</button>
+      <p class="subtitle">i have no account in D74 Edits, <a href="../signup">signup</a></p>
+    </div>
+  </div>
+
+  <div class="block-div">
+    <div class="center">
+      <div class="main-preload"></div>
+      <p class="loadtitle">Signing</p>
+    </div>
+  </div>
+
+  <script src="../view/view.js"></script>
+</body>
+
+</html>

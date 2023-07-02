@@ -7,6 +7,10 @@ body {
   font-size: 13px
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 * {
   font-family: "Open Sans", sans-serif;
 }
@@ -16,14 +20,68 @@ ion-icon {
 }
 
 .block-div {
+  width: 1000%;
+  height: 1000vh;
   position: fixed;
+  z-index: 999999999;
+  background: #fff;
   top: 0;
   left: 0;
-  width: 1000%;
-  height: 1000%;
-  z-index: 99999999;
+  display: none;
 }
+
 
 .bg-ogrey {
   background: #33333350;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-preload {
+  width: 75px;
+  height: 75px;
+  border: 3px solid var(--blue);
+  border-radius: 50%;
+  border-top: 3px solid var(--bg);
+  animation: spin 2s infinite;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0.2rem;
+}
+
+.subtitle {
+  font-size: 12px;
+  margin: 0.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue)
+}
+
+.loadtitle {
+  margin: 1rem 0.7rem;
+  font-size: 13px
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(1200deg);
+  }
 }
