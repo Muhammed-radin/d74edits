@@ -46,3 +46,4 @@ if (document.querySelector('nav')) {
     document.querySelector('.left-bar').style.display = 'block'
   }
 }
+

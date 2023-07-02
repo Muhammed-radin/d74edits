@@ -1,0 +1,9 @@
+nav input {
+  margin: 0.3rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 0.1rem;
+  width: 260px
+}
