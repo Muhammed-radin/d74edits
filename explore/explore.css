@@ -25,6 +25,7 @@ nav {
   z-index: 999;
   box-shadow: 0 0 10px #33333390;
   animation: showInLeft 0.5s 1;
+  display: none;
 }
 
 
