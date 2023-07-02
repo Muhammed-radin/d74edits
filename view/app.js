@@ -1,3 +1,11 @@
+function addScript(path){
+  var script = document.createElement('script')
+  script.src = path+'.js'
+  document.body.appendChild(script)
+}
+
+addScript('../veiw/alert')
+
 if (document.querySelector('nav .title[animation="true"]')) {
   var title = document.querySelector('nav .title')
   var i = 0
@@ -13,3 +21,10 @@ if (document.querySelector('nav .title[animation="true"]')) {
   }, 5000)
   //}
 }
+
+if (document.querySelector('.menu')) {
+  var menu = document.querySelector('.menu')
+  menu.style.left = (window.innerWidth / 2) - (menu.offsetWidth / 2) + 'px'
+}
+
+alert('Development mode','Web development refers to the creating, building, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites.')
