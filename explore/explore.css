@@ -13,6 +13,39 @@ nav {
   backdrop-filter: blur(1px)
 }
 
+.left-bar {
+  background: #fff;
+  padding: 0.1rem;
+  font-size: 16px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80%;
+  height: 100vh;
+  z-index: 999;
+  box-shadow: 0 0 10px #33333390;
+  animation: showInLeft 0.5s 1;
+}
+
+
+.link {
+  padding: 1rem;
+}
+
+.left-box {
+  margin-top: 1.5rem;
+}
+
+.left-bar-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.left-bar-close ion-icon {
+  font-size: 30px
+}
+
 body {
   background: var(--sec-bg);
 }
@@ -84,4 +117,14 @@ body {
 
 .active {
   color: var(--blue);
+}
+
+@keyframes showInLeft {
+  0% {
+    transform: translate(-120%)
+  }
+  
+  100% {
+    transform: translate(0%)
+  }
 }
