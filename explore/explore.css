@@ -51,10 +51,6 @@ body {
   background: var(--sec-bg);
 }
 
-.right-icons {
-  position: absolute;
-  right: 10px;
-}
 
 .menu {
   display: flex;
