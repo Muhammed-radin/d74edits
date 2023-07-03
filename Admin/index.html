@@ -21,6 +21,7 @@
       <ion-icon name="menu-outline" id="menuOpener"></ion-icon>
     </div>
   </nav>
+
   
   <div class="left-bar">
     <div class="left-bar-close" id="leftBarCloser">
@@ -34,7 +35,7 @@
         <p>Settings</p>
       </div>
       <div class="link">
-        <p>Subscribe</p>
+        <p>Create Post</p>
       </div>
       <div class="link">
         <p>YouTube</p>
@@ -45,7 +46,34 @@
     </div>
   </div>
   
-  <div class="form-center">
+  <div class="body">
+    <div class="content">
+      <div class="center-box">
+        <div class="center-icon">
+          <ion-icon name="brush-outline"></ion-icon>
+        </div>
+       <div class="center-text">
+         Themes
+       </div>
+      </div>
+    </div>
+    
+    <div class="content">
+      <div class="center-box">
+        <div class="center-icon">
+          <ion-icon name="video-outline"></ion-icon>
+        </div>
+       <div class="center-text">
+         Videos
+       </div>
+      </div>
+    </div>
+    
+    
+  </div>
+  
+  <div class="block-div" style="display: block; z-index: 999999"></div>
+  <div class="form-center" style="z-index: 99999999">
     <div class="header">
       <h3>D74 Edits</h3>
       <p class="subtitle">Get Administration</p>
@@ -53,12 +81,12 @@
     <div class="form">
       <input type="email" placeholder="Username" id="username">
       <input type="password" placeholder="Password" id="password">
-      <button id="submit" onclick="document.querySelector('.block-div').style.display = 'block';document.querySelector('.main-preload').style.display = 'block';/*localStorage.setItem('account',{});*/location.href='../explore'">Confirm</button>
+      <button id="submit" onclick="">Confirm</button>
       </div>
   </div>
 
-  
   <script src="../view/app.js"></script>
+  <script src="admin.js"></script>
 </body>
 
 </html>

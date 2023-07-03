@@ -1,5 +1,5 @@
 body {
-  background: url("../login/bg.jpg");
+  background: var(--sec-bg);
 }
 
 /*
@@ -16,6 +16,7 @@ body {
   min-width: 50%;
   max-height: 60%;
   background: #ffffff;
+  box-shadow: 0 0 10px #33333350
 }
 
 .form-center .header {
@@ -61,6 +62,36 @@ button {
   margin-top: 0.5rem;
 }
 
+.body {
+  width: 100%;
+  position: relative;
+  height: 90vh
+}
+
+.content {
+  align-items: center;
+  background: var(--white);
+  margin: 0.5rem;
+  padding: 0.5rem;
+  height: 260px;
+  border-radius: 8px;
+  position: relative
+}
+
+.center-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.center-icon, .center-icon ion-icon {
+  font-size: 40px !important;
+  text-align: center;
+  margin: 0.2rem;
+}
+
 @media screen and (max-width: 600px) {
   .form-center {
     position: absolute;
@@ -77,7 +108,14 @@ button {
   }
 }
 
+@media screen and (min-width: 600px){
+  .content {
+    width: 300px;
+  }
+}
+
 button:focus {
   opacity: 0.7;
   transition: 0.5s
 }
+
