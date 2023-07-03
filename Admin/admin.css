@@ -65,13 +65,13 @@ button {
 .body {
   width: 100%;
   position: relative;
-  height: 90vh
+  height: 90vh;
 }
 
 .content {
   align-items: center;
   background: var(--white);
-  margin: 0.5rem;
+  margin: 0.7rem;
   padding: 0.5rem;
   height: 260px;
   border-radius: 8px;
@@ -111,6 +111,13 @@ button {
 @media screen and (min-width: 600px){
   .content {
     width: 300px;
+    margin: 0.5rem;
+  }
+  
+  .body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
