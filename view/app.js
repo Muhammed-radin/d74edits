@@ -63,7 +63,7 @@ if (document.querySelector('.menu')) {
 alert('Development mode', 'Web development refers to the creating, building, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites.')
 
 if (document.querySelector('nav')) {
-  document.getElementById('leftBarCloser').onclick = function() {
+  document.querySelector('.left-bar').ondblclick = document.getElementById('leftBarCloser').onclick = function() {
     document.querySelector('.left-bar').animate([{
       transform: "translate(0%)"
   }, {
@@ -74,8 +74,38 @@ if (document.querySelector('nav')) {
       document.querySelector('.left-bar').style.display = 'none'
     }, 410)
   }
+  
+  document.querySelector('nav').animate([{
+    borderRadius: '0px',
+    margin: '0px'
+  }, {
+    borderRadius: '4px',
+    margin: '8px'
+  }, {
+    borderRadius: '8px',
+    margin: '8px'
+  }], {
+    duration: 500,iterations: 1,
+  }).onfinish = function (){
+    document.querySelector('nav').style.borderRadius = '8px'
+    document.querySelector('nav').style.margin = '8px'
+  }
 
   document.getElementById('menuOpener').onclick = function() {
     document.querySelector('.left-bar').style.display = 'block'
+    document.querySelectorAll('.link').forEach(function(elem, index){
+      elem.style.transform = 'translate(20px) scale(1.3)'
+      elem.animate([{
+        transform: "translate(20px) scale(1.3)"
+      }, {
+        transform: "translate(0px) scale(1)"
+      }], {
+        duration: 400,
+        delay: index * 100,
+        iterations: 1
+      }).onfinish = function (){
+        elem.style.transform = 'translate(0px) scale(1)'
+      }
+    })
   }
 }

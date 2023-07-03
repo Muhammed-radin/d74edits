@@ -1,6 +1,10 @@
-
 body {
   background: var(--sec-bg);
+}
+
+.body {
+  width: 100%;
+  min-height: 90vh;
 }
 
 .card {
@@ -44,17 +48,18 @@ body {
   0% {
     transform: translate(-120%)
   }
-  
+
   100% {
     transform: translate(0%)
   }
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 600px) {
   .card {
     width: 280px;
-  }
-  
+    height: max-content;
+    }
+
   .body {
     display: flex;
     flex-direction: row;

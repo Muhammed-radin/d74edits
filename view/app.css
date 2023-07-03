@@ -193,3 +193,7 @@ nav {
     width: 400px
   }
 }
+
+ion-icon:hover {
+  color: var(--blue)
+}
