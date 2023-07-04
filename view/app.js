@@ -10,7 +10,6 @@ addScript('../veiw/alert.js')
 addScript('../view/d74.js')
 
 function redirctTo(url){
-  nowUrl += url
   window.location.href = url
 }
 /*
