@@ -1,11 +1,18 @@
+var nowUrl = ''
 function addScript(path) {
   var script = document.createElement('script')
-  script.src = path + '.js'
+  script.src = nowUrl + path
   document.body.appendChild(script)
 }
 
 var heading = "D74 Edits"
-addScript('../veiw/alert')
+addScript('../veiw/alert.js')
+addScript('../view/d74.js')
+
+function redirctTo(url){
+  nowUrl += url
+  window.location.href = url
+}
 /*
 if (document.querySelector('nav .title')) {
   var title = document.querySelector('nav .title')
@@ -40,15 +47,15 @@ if (document.querySelector('.menu')) {
     adminPermission.started = false;
     adminPermission.duration = 0
   }
-
+  
   setInterval(function() {
     if (adminPermission.started) {
       adminPermission.duration += 1
 
       if (adminPermission.duration >= 2500) {
-        document.querySelector('.title').innerHTML = heading + ' [<small>' + adminPermission.duration + '</small>]'
+        document.querySelector('.title') ? document.querySelector('.title').innerHTML = heading + ' [<small>' + adminPermission.duration + '</small>]' : ''
       } else {
-        document.querySelector('.title').innerHTML = heading
+        document.querySelector('.title') ? document.querySelector('.title').innerHTML = heading : ''
       }
 
 
