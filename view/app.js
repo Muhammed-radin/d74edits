@@ -7,7 +7,7 @@ function addScript(path) {
 
 var heading = "D74 Edits"
 addScript('../veiw/alert.js')
-addScript('../view/d74.js')
+//addScript('../view/d74.js')
 
 function redirctTo(url){
   window.location.href = url
@@ -64,6 +64,12 @@ if (document.querySelector('.menu')) {
     }
   }, 0.5)
 
+}
+
+if (localStorage.getItem('admin')) {
+  var code = '<div class="link" onclick="redirctTo(\''+nowUrl+'../Admin\')">Admin</div>'
+  document.querySelector('.left-bar').innerHTML += code
+  console.log(code);
 }
 
 alert('Development mode', 'Web development refers to the creating, building, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites.')
