@@ -31,7 +31,7 @@ const db = {
       }
     });
 
-    xhr.open("POST", "https://d74edits-fce6.restdb.io/rest/"+collection);
+    xhr.open("GET", "https://d74edits-fce6.restdb.io/rest/"+collection);
     xhr.setRequestHeader("content-type", "application/json");
     xhr.setRequestHeader("x-apikey", this.qC4dK);
     xhr.setRequestHeader("cache-control", "no-cache");
