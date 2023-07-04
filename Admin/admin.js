@@ -19,7 +19,7 @@ document.getElementById('submit').onclick = function() {
     if (document.getElementById('username').value != false) {
       if (document.getElementById('password').value == '9h₩€eN5y!A3;J2Cku72gXuCHR)U&vdaAm$BXJsegLB3Gt5Z^+s5*teg&!2U₩9IX4') {
         document.querySelector('.form-center').style.display = document.querySelector('.block-div').style.display = 'none'
-        localStorage.setItem('admin', JSON.stringify({ date: Date.now() }))
+        localStorage.setItem('admin', JSON.stringify({ date: Date.now(), name: document.getElementById('username').value }))
         redirctTo('../')
       } else {
         alert('please type valid password', 'password incorrect,  please type valid password')

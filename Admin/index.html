@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="../view/app.css">
   <link rel="stylesheet" href="admin.css">
 
+  <script type="text/javascript" charset="utf-8">
+    if (localStorage.getItem('admin')) {} else {
+      window.location.href = 'admin_login'
+    }
+  </script>
+
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="../view/alert.js"></script>
@@ -82,6 +88,7 @@
 
   </div>
 
+  <!--
   <div class="block-div" style="display: block; z-index: 999"></div>
   <div class="form-center" style="z-index: 9999">
     <div class="header">
@@ -94,6 +101,7 @@
       <button id="submit" onclick="">Confirm</button>
     </div>
   </div>
+  -->
 
   <script src="../view/app.js"></script>
   <script src="../admin_main.js"></script>
