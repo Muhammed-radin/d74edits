@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="../view/app.css">
   <link rel="stylesheet" href="admin.css">
-  
+
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="../view/alert.js"></script>
@@ -22,12 +22,12 @@
     </div>
   </nav>
 
-  
+
   <div class="left-bar">
     <div class="left-bar-close" id="leftBarCloser">
       <ion-icon name="close-circle-outline"></ion-icon>
     </div>
-    <div class="left-box">
+    <div class="left-box" onclick="window.location.href='../explore'">
       <div class="link">
         <p>Explore</p>
       </div>
@@ -45,33 +45,43 @@
       </div>
     </div>
   </div>
-  
+
   <div class="body">
-    <div class="content">
+    <div class="content" onclick="window.location.href = 'themes'">
       <div class="center-box">
         <div class="center-icon">
           <ion-icon name="brush-outline"></ion-icon>
         </div>
-       <div class="center-text">
-         Themes
-       </div>
+        <div class="center-text">
+          Themes
+        </div>
       </div>
     </div>
-    
-    <div class="content">
+
+    <div class="content" onclick="window.location.href='videos'">
       <div class="center-box">
         <div class="center-icon">
-          <ion-icon name="column-outline"></ion-icon>
+          <ion-icon name="videocam-outline"></ion-icon>
         </div>
-       <div class="center-text">
-         Videos
-       </div>
+        <div class="center-text">
+          Videos
+        </div>
       </div>
     </div>
-    
-    
+
+    <div class="content" onclick="window.location.href='accounts'">
+      <div class="center-box">
+        <div class="center-icon">
+          <ion-icon name="people-outline"></ion-icon>
+        </div>
+        <div class="center-text">
+          Accounts
+        </div>
+      </div>
+    </div>
+
   </div>
-  
+
   <div class="block-div" style="display: block; z-index: 999999"></div>
   <div class="form-center" style="z-index: 99999999">
     <div class="header">
@@ -82,7 +92,7 @@
       <input type="email" placeholder="Username" id="username">
       <input type="password" placeholder="Password" id="password">
       <button id="submit" onclick="">Confirm</button>
-      </div>
+    </div>
   </div>
 
   <script src="../view/app.js"></script>

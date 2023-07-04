@@ -139,9 +139,16 @@ nav {
   display: none;
 }
 
+.link:nth-child(1){
+  margin-top: 2.5rem;
+}
 
 .link {
   padding: 1rem;
+}
+
+.link:hover {
+  color: var(--blue)
 }
 
 .left-box {
