@@ -43,23 +43,13 @@ const db = {
   getYTchannelVideos(onfinish) {
     const data = null;
 
-    const HTMLCode = `
-      <div class="loader-bg">
-        <div class="loader">
-        </div>
-      </div>`
-
-    document.body.innerHTML += HTMLCode
-
+    
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
         onfinish(xhr)
-        if (document.querySelector('.loader-bg')) {
-          document.querySelector('.loader-bg').style.display = 'none'
-        }
         
         if (this.status == 0) {
           alert('failed to load!')

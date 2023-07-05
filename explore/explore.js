@@ -1,6 +1,12 @@
-db.getYTchannelVideos(function (xhr = new XMLHttpRequest()){
+
+db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
   var res = JSON.parse(xhr.response)
-  res.items.forEach(function (data){
+
+  if (document.querySelector('.loader-bg')) {
+    document.querySelector('.loader-bg').style.display = 'none'
+  }
+
+  res.items.forEach(function(data, index) {
     var snippet = data.snippet
     var code = `<div class="card">
       <div class="card-date">${snippet.publishedAt.slice(0, 10)}</div>
@@ -14,7 +20,7 @@ db.getYTchannelVideos(function (xhr = new XMLHttpRequest()){
       <!div class="card-options">
         <! /div>
     </div>
-` 
-  document.querySelector('.body').innerHTML += code
+`
+    document.querySelector('.body').innerHTML += code
   })
 })
