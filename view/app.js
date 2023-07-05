@@ -6,8 +6,8 @@ function addScript(path) {
 }
 
 var heading = "D74 Edits"
-addScript('../veiw/alert.js')
-//addScript('../view/d74.js')
+addScript('../veiw/alert.js');
+//addScript('../view/d74.js');
 
 function redirctTo(url){
   window.location.href = url
