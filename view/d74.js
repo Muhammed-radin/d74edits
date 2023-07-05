@@ -60,6 +60,10 @@ const db = {
         if (document.querySelector('.loader-bg')) {
           document.querySelector('.loader-bg').style.display = 'none'
         }
+        
+        if (this.status == 0) {
+          alert('failed to load!')
+        }
       }
     });
 
