@@ -10,18 +10,18 @@ const db = {
       }
     });
 
-    xhr.open("POST", "https://d74edits-fce6.restdb.io/rest/"+collection);
+    xhr.open("POST", "https://d74edits-fce6.restdb.io/rest/" + collection);
     xhr.setRequestHeader("content-type", "application/json");
     xhr.setRequestHeader("x-apikey", this.qC4dK);
     xhr.setRequestHeader("cache-control", "no-cache");
 
     xhr.send(data);
-    
+
     return xhr
   },
-  get(collection, finish){
+  get(collection, finish) {
     var data = null;
-    
+
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
@@ -31,31 +31,42 @@ const db = {
       }
     });
 
-    xhr.open("GET", "https://d74edits-fce6.restdb.io/rest/"+collection);
+    xhr.open("GET", "https://d74edits-fce6.restdb.io/rest/" + collection);
     xhr.setRequestHeader("content-type", "application/json");
     xhr.setRequestHeader("x-apikey", this.qC4dK);
     xhr.setRequestHeader("cache-control", "no-cache");
 
     xhr.send(data);
-    
+
     return xhr
   },
-  getYTchannelVideos(onfinish){
+  getYTchannelVideos(onfinish) {
     const data = null;
-    
+
+    const HTMLCode = `
+      <div class="loader-bg">
+        <div class="loader">
+        </div>
+      </div>`
+
+    document.body.innerHTML += HTMLCode
+
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    
+
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
         onfinish(xhr)
+        if (document.querySelector('.loader-bg')) {
+          document.querySelector('.loader-bg').style.display = 'none'
+        }
       }
     });
-    
+
     xhr.open('GET', 'https://youtube-v31.p.rapidapi.com/search?channelId=UCvdaERWKWOjQBAREfPyK1ww&part=snippet%2Cid&order=date&maxResults=250');
     xhr.setRequestHeader('X-RapidAPI-Key', '786ab693aamsh13b490be165befdp1ebb1bjsn20906d36a500');
     xhr.setRequestHeader('X-RapidAPI-Host', 'youtube-v31.p.rapidapi.com');
-    
+
     xhr.send(data);
   }
 }

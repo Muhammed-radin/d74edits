@@ -1,7 +1,5 @@
-
 db.getYTchannelVideos(function (xhr = new XMLHttpRequest()){
   var res = JSON.parse(xhr.response)
-  console.log(res);
   res.items.forEach(function (data){
     var snippet = data.snippet
     var code = `<div class="card">
