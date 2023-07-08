@@ -28,6 +28,9 @@ if (document.querySelector('nav .title')) {
   //}
 }
 */
+
+
+
 if (document.querySelector('.menu')) {
   var menu = document.querySelector('.menu')
   menu.style.left = (window.innerWidth / 2) - (menu.offsetWidth / 2) + 'px'

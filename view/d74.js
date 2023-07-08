@@ -1,6 +1,6 @@
 const db = {
   qC4dK: '64a3b47b86d8c5956ded8f77',
-  push(collection, data = {}, onfinish) {
+  push(collection, data = {}, onfinish = function(){}) {
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
