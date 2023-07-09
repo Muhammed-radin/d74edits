@@ -1,4 +1,5 @@
 var nowUrl = ''
+
 function addScript(path) {
   var script = document.createElement('script')
   script.src = nowUrl + path
@@ -9,9 +10,25 @@ var heading = "D74 Edits"
 addScript('../veiw/alert.js');
 //addScript('../view/d74.js');
 
-function redirctTo(url){
+
+function redirctTo(url) {
   window.location.href = url
 }
+
+document.getElementById('loginLink').onclick = function(){ window.location.href = (nowUrl + '../login') }
+
+if (document.getElementById('loginLink')) {
+  if (localStorage.getItem('admin')) {
+    document.getElementById('loginLink').style.display = 'none'
+  }
+
+  if (JSON.parse(localStorage.getItem('user'))) {
+    if (JSON.parse(localStorage.getItem('user')).name.includes('guest')) {
+      document.getElementById('loginLink').style.display = 'block'
+    }
+  }
+}
+
 /*
 if (document.querySelector('nav .title')) {
   var title = document.querySelector('nav .title')
@@ -49,7 +66,7 @@ if (document.querySelector('.menu')) {
     adminPermission.started = false;
     adminPermission.duration = 0
   }
-  
+
   setInterval(function() {
     if (adminPermission.started) {
       adminPermission.duration += 1
@@ -70,7 +87,7 @@ if (document.querySelector('.menu')) {
 }
 
 if (localStorage.getItem('admin')) {
-  var code = '<div class="link" onclick="redirctTo(\''+nowUrl+'../Admin\')">Admin</div>'
+  var code = '<div class="link" onclick="redirctTo(\'' + nowUrl + '../Admin\')">Admin</div>'
   document.querySelector('.left-bar').innerHTML += code
 }
 
@@ -88,7 +105,7 @@ if (document.querySelector('nav')) {
       document.querySelector('.left-bar').style.display = 'none'
     }, 410)
   }
-  
+
   document.querySelector('nav').animate([{
     borderRadius: '0px',
     margin: '0px'
@@ -99,15 +116,16 @@ if (document.querySelector('nav')) {
     borderRadius: '8px',
     margin: '8px'
   }], {
-    duration: 500,iterations: 1,
-  }).onfinish = function (){
+    duration: 500,
+    iterations: 1,
+  }).onfinish = function() {
     document.querySelector('nav').style.borderRadius = '8px'
     document.querySelector('nav').style.margin = '8px'
   }
 
   document.getElementById('menuOpener').onclick = function() {
     document.querySelector('.left-bar').style.display = 'block'
-    document.querySelectorAll('.link').forEach(function(elem, index){
+    document.querySelectorAll('.link').forEach(function(elem, index) {
       elem.style.transform = 'translate(20px) scale(1.3)'
       elem.animate([{
         transform: "translate(20px) scale(1.3)"
@@ -117,7 +135,7 @@ if (document.querySelector('nav')) {
         duration: 400,
         delay: index * 100,
         iterations: 1
-      }).onfinish = function (){
+      }).onfinish = function() {
         elem.style.transform = 'translate(0px) scale(1)'
       }
     })
