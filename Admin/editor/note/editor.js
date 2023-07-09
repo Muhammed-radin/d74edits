@@ -54,6 +54,7 @@ function move(e) {
     case 'move':
       pushableEntity = false
       selection.forEach(function(entity) {
+        entity = entity.data == undefined ? entity : entity.data
         entity.x = e.clientX
       })
       break;
@@ -84,6 +85,9 @@ elem.addEventListener('touchend', function(e) {
     store.forEach(function (entity){
       entity.on('click', function(){
         selection[0] = entity
+        document.getElementById('fill').value = entity.fill
+        document.getElementById('str').value = entity.stroke
+        document.getElementById('x').value = entity.x
       })
     })
   } else {
