@@ -15,9 +15,10 @@ function redirctTo(url) {
   window.location.href = url
 }
 
-document.getElementById('loginLink').onclick = function(){ window.location.href = (nowUrl + '../login') }
 
 if (document.getElementById('loginLink')) {
+  document.getElementById('loginLink').addEventListener('click', function() { redirctTo(nowUrl + '../login') })
+
   if (localStorage.getItem('admin')) {
     document.getElementById('loginLink').style.display = 'none'
   }
