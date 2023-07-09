@@ -17,10 +17,27 @@ canvas.setWidth(330, 350)
 var nowTool = 'move'
 var touchstart = 0
 var touchend = 0
+var selection = []
+
+document.querySelectorAll('ion-icon').forEach(function(icon){
+  icon.onclick = function(){
+    document.querySelectorAll('ion-icon').forEach(function(ico){
+     ico.className = ico.className.replace('active', '__')
+    })
+    
+    icon.className = icon.className.replace('__','active')
+    nowTool = icon.dataset.r
+  }
+})
 
 function move(e){
   switch (nowTool) {
     case 'move':
+      selection.forEach(function (entity){
+        entity.x = e.clientX
+      })
+      break;
+    case 'rect': 
       
       break;
   }
