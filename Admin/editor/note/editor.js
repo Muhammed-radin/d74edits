@@ -36,6 +36,10 @@ document.querySelectorAll('input[type="color"]').forEach(function(elem) {
   }
 })
 
+function $(id){
+  return document.getElementById(id)
+}
+
 
 document.querySelectorAll('ion-icon').forEach(function(icon) {
   icon.onclick = function() {
@@ -48,6 +52,12 @@ document.querySelectorAll('ion-icon').forEach(function(icon) {
   }
 })
 
+document.querySelectorAll('.inp').forEach(function(elem){
+  elem.onchange = function (){
+    selection[0][elem.id] = elem.value
+  }
+})
+
 function move(e) {
   var e = e.changedTouches[0]
   switch (nowTool) {
@@ -55,7 +65,8 @@ function move(e) {
       pushableEntity = false
       selection.forEach(function(entity) {
         entity = entity.data == undefined ? entity : entity.data
-        entity.x = e.clientX
+        $('x').value = entity.x = e.clientX
+        $('y').value = entity.y = e.clientY
       })
       break;
     case 'rect':
@@ -88,6 +99,7 @@ elem.addEventListener('touchend', function(e) {
         document.getElementById('fill').value = entity.fill
         document.getElementById('str').value = entity.stroke
         document.getElementById('x').value = entity.x
+        $("y").value = entity.y
       })
     })
   } else {
