@@ -9,8 +9,10 @@ var entityGroup = canvas.entityGroup;
 var layer = canvas.Layer;
 var app = canvas.app
 
-canvas.fillScreen()
+elem.style.border = '1px solid'
+
+canvas.setWidth(330, 350)
 
 
 
-canvas.repeatRender()
+canvas.specialRender()
