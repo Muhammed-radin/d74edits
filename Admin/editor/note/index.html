@@ -4,12 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>D74 Editor | Note editor</title>
+  <title>D74 Editor | Note Editor</title>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+  <link rel="stylesheet" href="../../../view/app.css">
 </head>
 
 <body>
   <canvas id="c"></canvas>
-  
+
+  <div class="tools">
+    <ion-icon name="move-outline" class="active"></ion-icon>
+    <ion-icon name="square-outline"></ion-icon>
+  </div>
+
   <script src="mango.js"></script>
   <script src="editor.js"></script>
 </body>
