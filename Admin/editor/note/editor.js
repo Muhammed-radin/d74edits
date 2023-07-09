@@ -28,11 +28,14 @@ var touchend = 0
 var selection = []
 var tempEntity = new entity({})
 var pushableEntity = false
+var store = []
 
 document.querySelectorAll('input[type="color"]').forEach(function(elem) {
-  elem.ondblclick = function() {elem.value = '#444444'
+  elem.ontouchstart = function() {
+    elem.value = '#123456'
   }
 })
+
 
 document.querySelectorAll('ion-icon').forEach(function(icon) {
   icon.onclick = function() {
@@ -61,7 +64,8 @@ function move(e) {
       tempEntity.data.y = touchstart.clientY
       tempEntity.data.width = (e.clientX - touchstart.clientX)
       tempEntity.data.height = (e.clientY - touchstart.clientY)
-
+      tempEntity.data.fill = document.getElementById('fill').value == '#123456' ? 'transparent' : document.getElementById('fill').value
+      tempEntity.data.stroke = document.getElementById('str').value == '#123456' ? 'transparent' : document.getElementById('str').value
       break;
   }
 }
@@ -75,6 +79,16 @@ elem.addEventListener('touchstart', function(e) {
 
 elem.addEventListener('touchend', function(e) {
   touchend = e.changedTouches[0]
+  if (pushableEntity) {
+    store.push(tempEntity.data)
+    store.forEach(function (entity){
+      entity.on('click', function(){
+        selection[0] = entity
+      })
+    })
+  } else {
+    tempEntity.data.destroy()
+  }
   elem.removeEventListener('touchmove', move)
 })
 
