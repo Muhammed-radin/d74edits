@@ -36,7 +36,7 @@ document.querySelectorAll('input[type="color"]').forEach(function(elem) {
   }
 })
 
-function $(id){
+function $(id) {
   return document.getElementById(id)
 }
 
@@ -52,8 +52,8 @@ document.querySelectorAll('ion-icon').forEach(function(icon) {
   }
 })
 
-document.querySelectorAll('.inp').forEach(function(elem){
-  elem.onchange = function (){
+document.querySelectorAll('.inp').forEach(function(elem) {
+  elem.onkeyup = function() {
     selection[0][elem.id] = elem.value
   }
 })
@@ -65,8 +65,12 @@ function move(e) {
       pushableEntity = false
       selection.forEach(function(entity) {
         entity = entity.data == undefined ? entity : entity.data
-        $('x').value = entity.x = e.clientX
-        $('y').value = entity.y = e.clientY
+        $('x').value = entity.x = e.clientX - (entity.width / 2)
+        $('y').value = entity.y = e.clientY - (entity.height / 2)
+        $('width').value = entity.width
+        $('height').value = entity.height
+        $('text').value = entity.text
+        $('fontSize').value = entity.fontSize
       })
       break;
     case 'rect':
@@ -86,6 +90,7 @@ function move(e) {
 elem.addEventListener('touchstart', function(e) {
   touchstart = e.touches[0]
   tempEntity = new entity({})
+  selection[0] = tempEntity
   elem.addEventListener('touchmove', move)
 })
 
@@ -93,8 +98,8 @@ elem.addEventListener('touchend', function(e) {
   touchend = e.changedTouches[0]
   if (pushableEntity) {
     store.push(tempEntity.data)
-    store.forEach(function (entity){
-      entity.on('click', function(){
+    store.forEach(function(entity) {
+      entity.on('click', function() {
         selection[0] = entity
         document.getElementById('fill').value = entity.fill
         document.getElementById('str').value = entity.stroke
