@@ -58,6 +58,18 @@ document.querySelectorAll('.inp').forEach(function(elem) {
   }
 })
 
+setInterval(function() {
+  if (selection[0]) {
+    var entity = selection[0].data == undefined ? selection[0] : selection[0].data
+    $('x').value = entity.x
+    $('y').value = entity.y
+    $('width').value = entity.width
+    $('height').value = entity.height
+    $('text').value = entity.text
+    $('fontSize').value = entity.fontSize
+  }
+})
+
 function move(e) {
   var e = e.changedTouches[0]
   switch (nowTool) {
@@ -83,6 +95,20 @@ function move(e) {
       tempEntity.data.fill = document.getElementById('fill').value == '#123456' ? 'transparent' : document.getElementById('fill').value
       tempEntity.data.stroke = document.getElementById('str').value == '#123456' ? 'transparent' : document.getElementById('str').value
       break;
+    case 'text':
+      pushableEntity = true;
+      tempEntity.data.type = 'text'
+      tempEntity.data.x = touchstart.clientX
+      tempEntity.data.y = touchstart.clientY
+      ctx.save()
+      ctx.fontSize = tempEntity.fontSize
+      var txt = ctx.measureText(tempEntity.text)
+      ctx.restore()
+      console.log(txt.width);
+      tempEntity.data.width = txt.width
+      tempEntity.data.fill = document.getElementById('fill').value == '#123456' ? 'transparent' : document.getElementById('fill').value
+      tempEntity.data.stroke = document.getElementById('str').value == '#123456' ? 'transparent' : document.getElementById('str').value
+      break;
   }
 }
 
@@ -90,7 +116,7 @@ function move(e) {
 elem.addEventListener('touchstart', function(e) {
   touchstart = e.touches[0]
   tempEntity = new entity({})
-  selection[0] = tempEntity
+  pushableEntity ? selection[0] = tempEntity.data : ''
   elem.addEventListener('touchmove', move)
 })
 
