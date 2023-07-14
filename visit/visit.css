@@ -1,0 +1,36 @@
+body {
+  background: var(--sec-bg);
+}
+
+img {
+  display: flex;
+  width: 97%;
+  margin: 0.3 rem;
+  border-radius: 8px
+}
+
+.primary-box {
+  margin: 0.5rem;padding: 0.2rem;
+}
+
+ .title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 0.2rem;
+}
+
+.subbar {
+  display: flex;flex-direction: row
+}
+
+.subtext {
+  color: #666;
+  font-style: 12px;
+  margin: 0.3rem;
+  margin-top: 0.6rem ;
+  margin-left: 3rem;
+}
+
+.subtext:nth-child(1){
+  margin-left: 0.3rem;
+}
