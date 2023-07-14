@@ -13,7 +13,7 @@ img {
   margin: 0.5rem;padding: 0.2rem;
 }
 
- .title {
+.primary-box .title {
   font-weight: bold;
   font-size: 16px;
   margin-top: 0.2rem;
@@ -33,4 +33,21 @@ img {
 
 .subtext:nth-child(1){
   margin-left: 0.3rem;
+}
+
+.tags {
+  display: flex;flex-direction:row;flex-wrap: wrap 
+}
+
+.des {
+  margin: 0.5rem;
+}
+
+.tag {
+  padding: 0.4rem 1rem;
+  background: #66666610;
+  border: 2px solid var(--blue);
+  border-radius: 20px;
+  color: var(--color);
+  margin: 0.2rem;
 }
