@@ -20,7 +20,7 @@ if (params == '') {
       if (this.readyState === this.DONE) {
         var res = JSON.parse(this.response)
         var snippet = res.items[0].snippet
-        
+
         document.getElementById('thumb').src = snippet.thumbnails.medium.url
         document.getElementById('tags').innerHTML = ''
         document.getElementById('title').innerHTML = snippet.title
@@ -42,8 +42,11 @@ if (params == '') {
         des.match(/#[A-z0-9_]+/g).forEach(function(str) {
           des = des.replace(str, '<a href="">' + str + '</a>')
         })
-        
-        
+
+        des = des.replaceAll('<br/><br/><br/>', '<br/>')
+        des = des.replaceAll('<br/><br/>', '<br/>')
+        des = des.replaceAll('<br /><br /><br />', '<br/>')
+        des = des.replaceAll('<br /><br />', '<br/>')
 
         document.getElementById('pr').innerHTML = des
         snippet.tags.forEach(function(tagName) {

@@ -75,6 +75,24 @@ img {
   margin: 0.5rem;
   padding: 0.2rem 0.5rem;
   border: 1px solid transparent;
+  position: relative;
+}
+
+.btn ion-icon {
+  color: #fff;
+  top: 50%;
+  transform: translate(0,-50%);
+  right: 20px;
+  position: absolute;
+}
+
+.btn:nth-child(1){
+  margin-bottom: 0;
+}
+
+.grn {
+  margin-top: 0.3rem;
+  background: #35A953;
 }
 
 @media screen and (min-width: 500px) {
