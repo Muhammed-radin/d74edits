@@ -1,7 +1,6 @@
 
 db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
   var res = JSON.parse(xhr.response)
-  console.log(res);
   if (document.querySelector('.loader-bg')) {
     document.querySelector('.loader-bg').style.display = 'none'
   }
