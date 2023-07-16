@@ -54,13 +54,16 @@ img {
   border-radius: 20px;
   color: var(--color);
   margin: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px
 }
 
 .para {
   margin: 0.4rem;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  
+
 }
 
 .btn {
@@ -71,5 +74,16 @@ img {
   border-radius: 10px;
   margin: 0.5rem;
   padding: 0.2rem 0.5rem;
-  border: 1px solid transparent ;
+  border: 1px solid transparent;
+}
+
+@media screen and (min-width: 500px) {
+  .primary-box {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .lq-box {
+    padding: 0.4rem;margin: 0.2rem;
+  }
 }
