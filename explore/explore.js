@@ -9,12 +9,12 @@ db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
   res.items.forEach(function(data, index) {
     var id = 'ID_10' + index
     var snippet = data.snippet
-    var code = `<div class="card" id="${id}" onclick="redirctTo('../visit/?id=${data.id.videoId}')">
+    var code = `<div class="card" id="${id}" >
       <div class="card-date">${snippet.publishedAt.slice(0, 10)}</div>
-      <div class="card-img">
+      <div class="card-img" onclick="redirctTo('../visit/?id=${data.id.videoId}')">
         <img src="${snippet.thumbnails.medium.url}" alt="yt">
       </div>
-      <div class="card-title">${snippet.title}</div>
+      <div class="card-title" onclick="redirctTo('../visit/?id=${data.id.videoId}')">${snippet.title}</div>
       <div class="card-opt-icon" onclick="openOptions('${id+"2"}')">
         <ion-icon name="ellipsis-horizontal"></ion-icon>
       </div>
@@ -23,7 +23,7 @@ db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
           Options
         </div>
         <div class="card-body">
-          <p class="card-opt">
+          <p class="card-opt" onclick="redirctTo('../visit/?id=${data.id.videoId}')">
             View
           </p>
           <p class="card-opt">

@@ -1,0 +1,22 @@
+.acc {
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background: #eee;
+  margin: 0;
+}
+
+.acc .sp {
+  margin: 0.25rem;
+  margin-left: 0.4rem;
+}
+
+.acc span {
+  position: absolute;
+  right: 10px;
+}
+
+.body {
+  margin-top: 0.5rem;
+}

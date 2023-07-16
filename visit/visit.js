@@ -33,6 +33,7 @@ if (params == '') {
         }
 
         var des = snippet.description
+        var pureDes = snippet.description
         des = des.replaceAll('\n', '<br />')
 
         des.match(/#[a-z0-9_]+/g).forEach(function(str) {
@@ -41,6 +42,8 @@ if (params == '') {
         des.match(/#[A-z0-9_]+/g).forEach(function(str) {
           des = des.replace(str, '<a href="">' + str + '</a>')
         })
+        
+        
 
         document.getElementById('pr').innerHTML = des
         snippet.tags.forEach(function(tagName) {

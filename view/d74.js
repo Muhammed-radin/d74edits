@@ -27,7 +27,7 @@ const db = {
 
     xhr.addEventListener("readystatechange", function() {
       if (this.readyState === 4) {
-        onfinish(this)
+        finish(this)
       }
     });
 
