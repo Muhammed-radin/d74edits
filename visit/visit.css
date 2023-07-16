@@ -95,6 +95,7 @@ img {
   background: #35A953;
 }
 
+
 @media screen and (min-width: 500px) {
   .primary-box {
     display: flex;
