@@ -1,6 +1,7 @@
 
 db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
   var res = JSON.parse(xhr.response)
+  
   if (document.querySelector('.loader-bg')) {
     document.querySelector('.loader-bg').style.display = 'none'
   }
@@ -8,7 +9,7 @@ db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
   res.items.forEach(function(data, index) {
     var id = 'ID_10' + index
     var snippet = data.snippet
-    var code = `<div class="card" id="${id}">
+    var code = `<div class="card" id="${id}" onclick="redirctTo('../visit/?id=${data.id.videoId}')">
       <div class="card-date">${snippet.publishedAt.slice(0, 10)}</div>
       <div class="card-img">
         <img src="${snippet.thumbnails.medium.url}" alt="yt">
