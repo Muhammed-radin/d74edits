@@ -66,3 +66,6 @@ if (params == '') {
     xhr.send(data);
   }
 }
+
+document.querySelector('.block-div').style.display = 'none'
+document.querySelector('.form-center').style.display = 'none'
