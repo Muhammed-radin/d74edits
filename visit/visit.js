@@ -14,6 +14,25 @@ if (params == '') {
     const data = null;
     const xhr = new XMLHttpRequest();
 
+    document.getElementById('submit').addEventListener('click', function() {
+      document.getElementById('submit').innerHTML = '<div class="loader hide"></div><div class="load"><div class="loader"></div></div>'
+      var q = 'videos?q=' + decodeURI(JSON.stringify({ ytid: objectParams.id }))
+
+      db.get(q, function(xhr) {
+        var res = JSON.parse(xhr.response)[0]
+
+        if (document.getElementById('password').value == res.pw) {
+          document.querySelector('.block-div').style.display = 'none'
+          document.querySelector('.form-center').style.display = 'none'
+          document.body.style.overflow = 'scroll'
+          document.getElementById('submit').innerHTML = 'Submit'
+        } else {
+          alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube")
+          document.getElementById('submit').innerHTML = 'Submit'
+        }
+      })
+    })
+
     xhr.withCredentials = false;
 
     xhr.addEventListener('readystatechange', function() {
@@ -73,14 +92,5 @@ document.querySelector('.form-center').style.display = 'none'
 document.getElementById('dl').onclick = function() {
   document.querySelector('.block-div').style.display = 'block'
   document.querySelector('.form-center').style.display = 'block'
-}
-
-document.getElementById('submit').onclick = function() {
-  document.getElementById('submit').innerHTML = '<div class="loader hide"></div><div class="load"><div class="loader"></div></div>'
-  if (document.getElementById('password').value == 8800) {
-    document.querySelector('.block-div').style.display = 'none'
-    document.querySelector('.form-center').style.display = 'none'
-  } else {
-    alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube")
-  }
+  document.body.style.overflow = 'hidden'
 }

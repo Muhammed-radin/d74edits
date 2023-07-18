@@ -28,14 +28,14 @@ if (params == '') {
       document.getElementById('vurl').value = res.url
       document.getElementById('imgUrl').value = res.thumb
       const des = res.description
-      
+
       loadImg()
 
       document.getElementById('submit').onclick = function() {
         db.put('videos/' + sid, JSON.stringify({
           title: document.getElementById('title').value,
           pw: document.getElementById('password').value,
-          date:document.getElementById('date').value,
+          date: document.getElementById('date').value,
           ytid: document.getElementById('ytid').value,
           url: document.getElementById('vurl').value,
           thumb: document.getElementById('imgUrl').value,
