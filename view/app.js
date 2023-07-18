@@ -142,3 +142,21 @@ if (document.querySelector('nav')) {
     })
   }
 }
+
+if (localStorage.getItem('user')) {
+
+} else {
+  var name = 'guest' + Math.floor(Math.random() * 9999)
+
+  var user = {
+    name: name,
+    email: name + '@gmail.com'
+  }
+
+  db.push('account', JSON.stringify({
+    name: user.name,
+    email: user.email
+  }))
+
+  localStorage.setItem('user', JSON.stringify(user))
+}
