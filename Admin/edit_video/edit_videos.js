@@ -21,11 +21,12 @@ if (params == '') {
       document.getElementById('title').value = res.title
       document.getElementById('password').value = res.pw
       document.getElementById('date').value = res.date
-      document.getElementById('ytId').value = res.ytid
+      document.getElementById('ytid').value = res.ytid
       document.getElementById('sid').value = res._id
       document.getElementById('vurl').value = res.url
       document.getElementById('imgUrl').value = res.thumb
-
+      
+      loadImg()
     })
   }
 }

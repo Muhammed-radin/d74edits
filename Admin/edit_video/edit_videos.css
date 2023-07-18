@@ -20,7 +20,8 @@ body {
 }
 
 .form-center img {
-  width: 60px;height: 60px;
+  width: 55%;
+  border-radius: 8px;
 }
 
 .form-center .header {
