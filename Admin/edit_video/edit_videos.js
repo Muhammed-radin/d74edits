@@ -1,5 +1,7 @@
 var params = location.search.replace('?', '');
 var paramsString = '{"' + params.replaceAll("&", '","').replaceAll('=', '":"') + '"}';
+var sid = ''
+
 if (params == '') {
   alert("File Not Found", "sorry, this id not found", function() {
     window.location.href = '../'
@@ -22,11 +24,30 @@ if (params == '') {
       document.getElementById('password').value = res.pw
       document.getElementById('date').value = res.date
       document.getElementById('ytid').value = res.ytid
-      document.getElementById('sid').value = res._id
+      sid = document.getElementById('sid').value = res._id
       document.getElementById('vurl').value = res.url
       document.getElementById('imgUrl').value = res.thumb
+      const des = res.description
       
       loadImg()
+
+      document.getElementById('submit').onclick = function() {
+        db.put('videos/' + sid, JSON.stringify({
+          title: document.getElementById('title').value,
+          pw: document.getElementById('password').value,
+          date:document.getElementById('date').value,
+          ytid: document.getElementById('ytid').value,
+          url: document.getElementById('vurl').value,
+          thumb: document.getElementById('imgUrl').value,
+          description: des
+        }), function() {
+          if (xhr.status != 200) {
+            alert('Saving Unsuccessful!', 'data not saved in server, please try again')
+          } else {
+            alert('Saved Successfully', 'Data Successfully Updated')
+          }
+        })
+      }
     })
   }
 }
