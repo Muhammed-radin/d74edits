@@ -26,6 +26,7 @@ if (params == '') {
           document.querySelector('.form-center').style.display = 'none'
           document.body.style.overflow = 'scroll'
           document.getElementById('submit').innerHTML = 'Submit'
+          window.location.href = res.url
         } else {
           alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube")
           document.getElementById('submit').innerHTML = 'Submit'
