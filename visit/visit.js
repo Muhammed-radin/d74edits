@@ -76,6 +76,7 @@ document.getElementById('dl').onclick = function() {
 }
 
 document.getElementById('submit').onclick = function() {
+  document.getElementById('submit').innerHTML = '<div class="loader hide"></div><div class="load"><div class="loader"></div></div>'
   if (document.getElementById('password').value == 8800) {
     document.querySelector('.block-div').style.display = 'none'
     document.querySelector('.form-center').style.display = 'none'
