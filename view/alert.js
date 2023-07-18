@@ -1,15 +1,17 @@
 var _alerting = false
 var _alertData = []
 var _alertIndex = 0
+var alertManager = {}
 
 function alert(head = 'Untitled', msg = '', onclose=function(){}) {
   var _id = 'ALERT_ID_' + Math.floor(Math.random() * 99999)
+  alertManager[_id] = onclose
   var html = `
   <div class="block-div bg-ogrey" id="${_id}_BLOCK"></div>
   <div class="alert-modal" id="${_id}">
     <div class="alert-head">${head}</div>
     <div class="alert-body">${msg}</div>
-    <button class="alert-right" onclick="document.getElementById('${_id}').remove();document.getElementById('${_id}_BLOCK').remove();_alerting = false;resolveAlert();(${onclose})();">CONTINUE</button>
+    <div class="alert-right" onclick="document.getElementById('${_id}').remove();document.getElementById('${_id}_BLOCK').remove();_alerting = false;resolveAlert();alertManager['${_id}']();">CONTINUE</div>
   </div>`
 
   if (_alerting) {

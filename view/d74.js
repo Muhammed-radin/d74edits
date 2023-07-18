@@ -76,7 +76,7 @@ const db = {
       }
     });
 
-    xhr.open('GET', 'https://youtube-v31.p.rapidapi.com/search?channelId=UCvdaERWKWOjQBAREfPyK1ww&part=snippet%2Cid&order=date&maxResults=250');
+    xhr.open('GET', 'https://youtube-v31.p.rapidapi.com/search?channelId=UCvdaERWKWOjQBAREfPyK1ww&part=snippet%2Cid&order=date&maxResults=1000');
     xhr.setRequestHeader('X-RapidAPI-Key', '786ab693aamsh13b490be165befdp1ebb1bjsn20906d36a500');
     xhr.setRequestHeader('X-RapidAPI-Host', 'youtube-v31.p.rapidapi.com');
 

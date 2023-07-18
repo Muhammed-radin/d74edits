@@ -31,14 +31,16 @@
 }
 
 .alert-right {
-  color: var(--blue);
-  font-weight: bold;
-  position: absolute;
-  bottom: 7px;
+  color: var(--blue) !important;
+  font-weight: bold !important;
+  position: absolute !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  bottom: 7px !important;
   right: 10px !important;
-  outline: none;
-  border: none;
-  background: var(--bg);
+  outline: none !important;
+  border: none !important;
+  background: var(--bg) !important;
 }
 
 .alert-right:hover {
