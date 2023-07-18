@@ -1,6 +1,6 @@
 const db = {
   qC4dK: '64a3b47b86d8c5956ded8f77',
-  push(collection, data = {}, onfinish = function(){}) {
+  push(collection, data = {}, onfinish = function() {}) {
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
@@ -19,7 +19,7 @@ const db = {
 
     return xhr
   },
-  put(collection, data = {}, onfinish = function(){}) {
+  put(collection, data = {}, onfinish = function() {}) {
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
@@ -59,24 +59,24 @@ const db = {
 
     return xhr
   },
-  getYTchannelVideos(onfinish) {
+  getYTchannelVideos(onfinish, pageTkn = false) {
     const data = null;
 
-    
+
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
         onfinish(xhr)
-        
+
         if (this.status == 0) {
           alert('failed to load!')
         }
       }
     });
 
-    xhr.open('GET', 'https://youtube-v31.p.rapidapi.com/search?channelId=UCvdaERWKWOjQBAREfPyK1ww&part=snippet%2Cid&order=date&maxResults=1000');
+    xhr.open('GET', 'https://youtube-v31.p.rapidapi.com/search?channelId=UCFodctpE1wtpFhWw716uCgg&part=snippet%2Cid&order=date&maxResults=250' + (pageTkn == false ? '' : '&pageToken=' + pageTkn));
     xhr.setRequestHeader('X-RapidAPI-Key', '786ab693aamsh13b490be165befdp1ebb1bjsn20906d36a500');
     xhr.setRequestHeader('X-RapidAPI-Host', 'youtube-v31.p.rapidapi.com');
 
