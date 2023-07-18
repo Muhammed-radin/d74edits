@@ -69,3 +69,17 @@ if (params == '') {
 
 document.querySelector('.block-div').style.display = 'none'
 document.querySelector('.form-center').style.display = 'none'
+
+document.getElementById('dl').onclick = function() {
+  document.querySelector('.block-div').style.display = 'block'
+  document.querySelector('.form-center').style.display = 'block'
+}
+
+document.getElementById('submit').onclick = function() {
+  if (document.getElementById('password').value == 8800) {
+    document.querySelector('.block-div').style.display = 'none'
+    document.querySelector('.form-center').style.display = 'none'
+  } else {
+    alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube")
+  }
+}
