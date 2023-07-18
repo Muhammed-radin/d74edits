@@ -22,10 +22,10 @@ db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
     
     var code = `<div class="card" id="${id}" >
       <div class="card-date">${snippet.publishedAt.slice(0, 10)}</div>
-      <div class="card-img" onclick="redirctTo('../visit/?id=${data.id.videoId}')">
+      <div class="card-img" onclick="redirctTo('../edit_video/?id=${data.id.videoId}')">
         <img src="${snippet.thumbnails.medium.url}" alt="yt">
       </div>
-      <div class="card-title" onclick="redirctTo('../visit/?id=${data.id.videoId}')">${snippet.title}</div>
+      <div class="card-title" onclick="redirctTo('../edit_video/?id=${data.id.videoId}')">${snippet.title}</div>
       <div class="card-opt-icon" onclick="openOptions('${id+"2"}')">
         <ion-icon name="ellipsis-horizontal"></ion-icon>
       </div>
