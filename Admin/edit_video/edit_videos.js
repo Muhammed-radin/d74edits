@@ -22,7 +22,7 @@ if (params == '') {
       
       if (JSON.parse(xhr.response).length == 0) {
         alert('Data Not Found', 'Data not found in d74 edits server. please install this video', function(){
-          window.location.href = '../init?id='+ytId
+          window.location.href = '../init/?id='+ytId
         })
       }
       
