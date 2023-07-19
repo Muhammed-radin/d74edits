@@ -17,9 +17,15 @@ if (params == '') {
     var ytId = objectParams.id
     var q = 'videos?q=' + decodeURI(JSON.stringify({ ytid: ytId }))
 
-    db.get(q, function(xhr) {
+    db.get(q, function(xhr = new XMLHttpRequest()) {
       var res = JSON.parse(xhr.response)[0]
-
+      
+      if (JSON.parse(xhr.response).length == 0) {
+        alert('Data Not Found', 'Data not found in d74 edits server. please install this video', function(){
+          window.location.href = '../init?id='+ytId
+        })
+      }
+      
       document.getElementById('title').value = res.title
       document.getElementById('password').value = res.pw
       document.getElementById('date').value = res.date

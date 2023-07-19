@@ -48,7 +48,7 @@ db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
 `
     document.querySelector('.body').innerHTML += code
   })
-})
+}, 'CMgBEAA')
 
 function openOptions(id) {
   var elem = document.getElementById(id)
