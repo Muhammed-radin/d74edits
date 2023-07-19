@@ -43,6 +43,23 @@ ion-icon {
   font-size: 23px
 }
 
+.load-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%)
+}
+
+.load-btn {
+  padding: 0.3rem 0.8rem;
+  margin: 0.5rem;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  background: transparent;
+  border-radius: 8px;
+  width: 90%;
+  height: 36px;
+}
+
 .block-div {
   width: 1000%;
   height: 1000vh;
@@ -221,6 +238,10 @@ nav {
 @media screen and (min-width: 600px) {
   .left-bar {
     width: 400px
+  }
+  
+  .load-btn {
+    width: 160px;
   }
 }
 

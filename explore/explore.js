@@ -1,6 +1,8 @@
+var pageTkn = false
 
 db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
   var res = JSON.parse(xhr.response)
+  
   
   if (document.querySelector('.loader-bg')) {
     document.querySelector('.loader-bg').style.display = 'none'
@@ -37,6 +39,12 @@ db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
 `
     document.querySelector('.body').innerHTML += code
   })
+  
+  if (res.nextPageToken) {
+    pageTkn = res.nextPageToken
+    
+    document.querySelector('.body').innerHTML += '<br/><button class="load-btn">Load More</button>'
+  }
 })
 
 function openOptions(id) {
