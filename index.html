@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>D74edits </title>
-  
+
   <!-- HTML -->
-  
+
 
   <!-- Custom Styles -->
   <script>
+    var params = location.search.replace('?', '');
+    var paramsString = '{"' + params.replaceAll("&", '","').replaceAll('=', '":"') + '"}';
+
+    if (params == '') {} else {
+      var objectParams = JSON.parse(paramsString);
+      objectParams = objectParams
+
+      if (objectParams.app == undefined) {} else {
+        localStorage.setItem('app', true)
+      }
+    }
+
     window.location.href = 'explore'
   </script>
 </head>
 
 <body>
-  <center><p>loading..</p></center>
+  <center>
+    <p>loading..</p>
+  </center>
   <!-- Project -->
 </body>
+
 </html>
