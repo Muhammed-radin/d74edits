@@ -43,7 +43,7 @@ db.getYTchannelVideos(function(xhr = new XMLHttpRequest()) {
   if (res.nextPageToken) {
     pageTkn = res.nextPageToken
     
-    document.querySelector('.body').innerHTML += '<br/><button class="load-btn">Load More</button>'
+    document.querySelector('.load23').innerHTML += '<br/><button class="load-btn">Load More</button>'
   }
 })
 

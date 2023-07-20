@@ -111,13 +111,15 @@ button {
 @media screen and (min-width: 600px){
   .content {
     width: 300px;
-    margin: 0.5rem;
+    margin: 0.3rem;
   }
   
   .body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start
   }
 }
 
