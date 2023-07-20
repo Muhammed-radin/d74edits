@@ -30,9 +30,10 @@ if (params == '') {
           document.getElementById('submit').innerHTML = 'Submit'
           window.location.href = res.url
         } else {
-          alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube")
-          document.getElementById('submit').innerHTML = 'Submit'
-          window.location.reload()
+          alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube", function() {
+            document.getElementById('submit').innerHTML = 'Submit'
+            window.location.reload()
+          })
         }
       })
     })
