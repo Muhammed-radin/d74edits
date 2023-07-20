@@ -125,22 +125,26 @@ a {
 .menu {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-content: center;
   padding: 0.6rem;
   border-radius: 14px;
   margin: 1rem;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  /*position: absolute;
   position: sticky;
-  position: -webkit-sticky;
+  position: -webkit-sticky;*/
+  position: fixed;
   bottom: 10px;
   left: 50%;
-  transform: translate(-10%);
+  transform: translate(-20%);
   box-shadow: 0 0 15px #88888850;
   width: max-content;
   background: var(--bg);
   z-index: 99;
 }
+
 
 .menu-icon {
   color: var(--color);
@@ -221,6 +225,7 @@ nav {
   justify-content: center;
   align-items: center;
   margin-top: 0.1rem;
+  margin-bottom: 25%;
 }
 
 @keyframes showInLeft {
@@ -254,6 +259,7 @@ nav {
   
   .load23 {
     margin-top: 1rem;
+    margin-bottom: 10%;
   }
   
   .card-title {

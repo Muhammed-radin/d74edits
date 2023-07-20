@@ -24,12 +24,15 @@ if (params == '') {
         if (document.getElementById('password').value == res.pw) {
           document.querySelector('.block-div').style.display = 'none'
           document.querySelector('.form-center').style.display = 'none'
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0;
           document.body.style.overflow = 'scroll'
           document.getElementById('submit').innerHTML = 'Submit'
           window.location.href = res.url
         } else {
           alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube")
           document.getElementById('submit').innerHTML = 'Submit'
+          window.location.reload()
         }
       })
     })
