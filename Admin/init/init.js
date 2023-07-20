@@ -51,7 +51,7 @@ if (params == '') {
             } else {
               sub.innerHTML = 'Successfully Installed'
               loader.value = 100
-              document.querySelector('.center').innerHTML += 'go to editor'.link('../edit_video/?id='+ytId)
+              document.querySelector('.center').innerHTML += 'Go To Editor'.link('../edit_video/?id='+ytId)
             }
           })
         }

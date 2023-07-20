@@ -123,6 +123,10 @@ body {
   padding: 0.3rem;
 }
 
+.load23 {
+  margin-bottom: 2rem;
+}
+
 .active {
   color: var(--blue);
 }
