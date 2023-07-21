@@ -8,6 +8,8 @@
 
   <link rel="stylesheet" href="../view/app.css">
   <link rel="stylesheet" href="login.css">
+
+  <script src="../view/alert.js"></script>
 </head>
 
 <body>
@@ -19,19 +21,20 @@
     <div class="form">
       <input type="email" placeholder="Email" id="email">
       <input type="password" placeholder="Password" id="password">
-      <button id="submit" onclick="document.querySelector('.block-div').style.display = 'block';document.querySelector('.main-preload').style.display = 'block';/*localStorage.setItem('account',{});*/location.href='../explore'">Login</button>
+      <button id="submit">Login</button>
       <p class="subtitle">i have no account in D74 Edits, <a href="../signup">signup</a></p>
     </div>
   </div>
 
-  <div class="block-div">
-    <div class="center">
-      <div class="main-preload"></div>
-      <p class="loadtitle">Signing</p>
-    </div>
+  <div class="block-div"> </div>
+  <div class="center">
+    <div class="main-preload"></div>
+    <p class="loadtitle">Signing</p>
   </div>
 
-  <script src="../view/view.js"></script>
+  <script src="../view/app.js"></script>
+  <script src="../view/d74.js"></script>
+  <script src="login.js"></script>
 </body>
 
 </html>

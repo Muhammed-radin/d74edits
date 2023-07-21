@@ -89,7 +89,9 @@ if (document.querySelector('.menu')) {
 
 if (localStorage.getItem('admin')) {
   var code = '<div class="link" onclick="redirctTo(\'' + nowUrl + '../Admin\')">Admin</div>'
-  document.querySelector('.left-bar').innerHTML += code
+  if (document.querySelector('.left-bar')) {
+    document.querySelector('.left-bar').innerHTML += code
+  }
 }
 
 // alert('Development mode', 'Web development refers to the creating, building, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites.')
