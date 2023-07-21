@@ -162,5 +162,5 @@ if (localStorage.getItem('user')) {
 }
 
 if (localStorage.getItem('app')) {
-  window.location.reload()
+  // window.location.reload()
 }
