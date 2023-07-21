@@ -81,6 +81,8 @@ ion-icon {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 999999;
+  text-align: center;
   transform: translate(-50%, -50%);
 }
 
