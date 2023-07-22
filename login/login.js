@@ -36,7 +36,6 @@ function logIt(lg = false) {
     }
   }
 
-
   document.getElementById('submit').addEventListener('click', function() {
     setText('Singing...')
     loadit()
@@ -46,12 +45,36 @@ function logIt(lg = false) {
         alert('Signing Failed', 'Account not found, some reasons given below, type valid email and password <ul><li>Account Banned</li><li>or Account Deleted</li><li>or Invalid Email & Password</li><li>or Internet connection error</li></ul>')
       } else {
         localStorage.setItem('user', JSON.stringify(new UserDataModel(res[0].name, res[0].email, res[0]._id, JSON.stringify(res))))
+        redirctTo('../explore')
       }
 
-      //localStorage.setItem('user', JSON.stringify(new UserDataModel(user.name, user.email, res._id, JSON.stringify(res))))
       unload()
     })
   })
+
+  var params = location.search.replace('?', '');
+  var paramsString = '{"' + params.replaceAll("&", '","').replaceAll('=', '":"') + '"}';
+  if (params == '') {} else {
+    var objectParams = JSON.parse(paramsString);
+    objectParams = objectParams
+    if (objectParams.email == undefined || objectParams.password == undefined) {
+
+    } else {
+      setText('Singing...')
+      loadit()
+      db.get('account?q=' + decodeURI(JSON.stringify({ email: document.getElementById('email').value, password: document.getElementById('password').value })), function(xhr) {
+        var res = JSON.parse(xhr.response);
+        if (res.length == 0) {
+          alert('Signing Failed', 'Account not found, some reasons given below, type valid email and password <ul><li>Account Banned</li><li>or Account Deleted</li><li>or Invalid Email & Password</li><li>or Internet connection error</li></ul>')
+        } else {
+          localStorage.setItem('user', JSON.stringify(new UserDataModel(res[0].name, res[0].email, res[0]._id, JSON.stringify(res))))
+          redirctTo(objectParams.url == undefined ? '../explore' : objectParams.url)
+        }
+        unload()
+      })
+
+    }
+  }
 
 }
 
