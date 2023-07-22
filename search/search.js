@@ -9,6 +9,7 @@ function searchVideos(search) {
     }
 
     document.getElementById('searcher').onchange = function(e) {
+      document.querySelector('.body').innerHTML = ''
       res.forEach(function(data, index) {
         if (data.title.toLocaleLowerCase().includes(document.getElementById('searcher').value.toLocaleLowerCase()) || data.description.toLocaleLowerCase().includes(document.getElementById('searcher').value.toLocaleLowerCase())) {
           var id = 'ID_10' + index
@@ -43,8 +44,8 @@ function searchVideos(search) {
           document.querySelector('.body').innerHTML += code
         }
       })
-      
-      
+
+
     }
   })
 }
