@@ -1,6 +1,7 @@
 unload()
 signup()
 
+
 class UserDataModel {
   constructor(name, email, id, data) {
     this.name = name
@@ -60,10 +61,12 @@ function signup(lg = false) {
       setText('Creating...')
       loadit()
       if (localStorage.getItem('user')) {
+        var key = 'Vwu_62£gw7an:27' + Math.floor(Math.random * 99) + '839' + Math.floor(Math.random() * 9999) + '_4628bsusYueja583__' + ['W', 'n', 'k', 'M', 'OL', 'K', 'b', 'T', 'f', 'r', 'R'][Math.floor(Math.random() * 9)]
         db.put('account/' + JSON.parse(localStorage.getItem('user')).id, JSON.stringify({
           name: document.getElementById('username').value,
-          password: document.getElementById('password').value,
+          password: JSON.stringify(CryptoJS.AES.encrypt(document.getElementById('password').value, key)),
           email: document.getElementById('email').value,
+          cid: key,
         }), function(xhr) {
           var res = JSON.parse(xhr.response);
           if (xhr.status != 200) {
@@ -75,10 +78,12 @@ function signup(lg = false) {
           unload()
         })
       } else {
+        var key = 'Vwu_62£gw7an:27' + Math.floor(Math.random * 99) + '839' + Math.floor(Math.random() * 9999) + '_4628bsusYueja583__' + ['W', 'n', 'k', 'M', 'OL', 'K', 'b', 'T', 'f', 'r', 'R'][Math.floor(Math.random() * 9)]
         db.post('account', JSON.stringify({
           name: document.getElementById('username').value,
-          password: document.getElementById('password').value,
+          password: CryptoJS.AES.encrypt(document.getElementById('password').value, key),
           email: document.getElementById('email').value,
+          cid: key,
         }), function(xhr) {
           var res = JSON.parse(xhr.response);
           if (xhr.status != 201) {
