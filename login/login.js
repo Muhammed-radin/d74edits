@@ -22,7 +22,11 @@ function logIt(lg = false) {
         loadit()
         db.get('account?q=' + decodeURI(JSON.stringify({ name: user.name, email: user.email })), function(xhr) {
           var res = JSON.parse(xhr.response)
-          localStorage.setItem('user', JSON.stringify(new UserDataModel(user.name, user.email, res[0]._id, JSON.stringify(res))))
+          if (res.length == 0) {
+            localStorage.removeItem('user')
+          } else {
+            localStorage.setItem('user', JSON.stringify(new UserDataModel(user.name, user.email, res[0]._id, JSON.stringify(res))))
+          }
           unload()
           logIt(true)
         })
@@ -40,6 +44,8 @@ function logIt(lg = false) {
       var res = JSON.parse(xhr.response);
       if (res.length == 0) {
         alert('Signing Failed', 'Account not found, some reasons given below, type valid email and password <ul><li>Account Banned</li><li>or Account Deleted</li><li>or Invalid Email & Password</li><li>or Internet connection error</li></ul>')
+      } else {
+        localStorage.setItem('user', JSON.stringify(new UserDataModel(res[0].name, res[0].email, res[0]._id, JSON.stringify(res))))
       }
 
       //localStorage.setItem('user', JSON.stringify(new UserDataModel(user.name, user.email, res._id, JSON.stringify(res))))
