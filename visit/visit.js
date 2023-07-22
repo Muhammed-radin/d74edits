@@ -16,7 +16,7 @@ if (params == '') {
 
     var q = 'videos?q=' + decodeURI(JSON.stringify({ ytid: objectParams.id }))
 
-    document.getElementById('dl').style.display = 'none'
+    document.getElementById('dl').style.display = 'block'
 
     db.get(q, function(xhr) {
       var res = JSON.parse(xhr.response)[0]
