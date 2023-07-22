@@ -30,6 +30,9 @@ function signup(lg = false) {
   }
 
   document.getElementById('submit').addEventListener('click', function() {
+
+    console.log($('email').value.slice($('email').value.lastIndexOf('.') + 1, $('email').value.length).length)
+
     if ($('username').value == false ||
       $('password').value == false ||
       $('confPass').value == false ||
@@ -37,27 +40,42 @@ function signup(lg = false) {
       alert('please fill inputs')
     } else if ($('email').value.includes('@') == false ||
       $('email').value.includes('.') == false ||
-      $('email').value.slice($('email').value.lastIndexOf('.'), $('email').value.length).length >= 2) {
+      ($('email').value.slice($('email').value.lastIndexOf('.'), $('email').value.length).length >= 2) == false
+    ) {
       alert('please type vail email')
-    } else if ($('password').value.length >= 8) {
+    } else if (($('password').value.length >= 7) == false) {
       alert('password required minimum 8 letters')
-    } else if ($('password').value == $('confPass').value) {
+    } else if (($('password').value == $('confPass').value) == false) {
       alert('password and configure password is not equal')
     } else {
       setText('Creating...')
       loadit()
       if (localStorage.getItem('user')) {
-        db.put('accounts/' + JSON.parse(localStorage.getItem('user')).id, JSON.stringify({
-          name: document.getElementByI('username').value,
-          password: document.getElementByI('password').value,
-          email: document.getElementByI('email').value,
+        db.put('account/' + JSON.parse(localStorage.getItem('user')).id, JSON.stringify({
+          name: document.getElementById('username').value,
+          password: document.getElementById('password').value,
+          email: document.getElementById('email').value,
         }), function(xhr) {
           var res = JSON.parse(xhr.response);
-          if (res.length == 0) {
-            alert('Signing Failed', 'Account not found, some reasons given below, type valid email and password <ul><li>Account Banned</li><li>or Account Deleted</li><li>or Invalid Email & Password</li><li>or Internet connection error</li></ul>')
+          if (xhr.status != 200) {
+            alert('Account Creation Failed', 'can\'t create account')
           } else {
-            localStorage.setItem('user', JSON.stringify(new UserDataModel(res[0].name, res[0].email, res[0]._id, JSON.stringify(res))))
-            redirctTo('../explore')
+            redirctTo('../login/?email=' + $('email').value + '&password=' + $('password').value)
+          }
+
+          unload()
+        })
+      } else {
+        db.post('account', JSON.stringify({
+          name: document.getElementById('username').value,
+          password: document.getElementById('password').value,
+          email: document.getElementById('email').value,
+        }), function(xhr) {
+          var res = JSON.parse(xhr.response);
+          if (xhr.status != 201) {
+            alert('Account Creation Failed', 'can\'t create account')
+          } else {
+            redirctTo('../login/?email=' + $('email').value + '&password=' + $('password').value)
           }
 
           unload()

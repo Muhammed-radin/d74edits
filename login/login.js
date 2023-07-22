@@ -32,7 +32,7 @@ function logIt(lg = false) {
         })
       }
     } else {
-
+      redirctTo('../')
     }
   }
 
