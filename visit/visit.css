@@ -40,7 +40,11 @@ img {
 .tags {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  background: var(--bg);
+  padding: 0.5rem;
+  border-radius: 7px;
+  margin: 0.2rem;
 }
 
 .des {

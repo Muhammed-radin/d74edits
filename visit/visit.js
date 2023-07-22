@@ -14,12 +14,21 @@ if (params == '') {
     const data = null;
     const xhr = new XMLHttpRequest();
 
-    document.getElementById('submit').addEventListener('click', function() {
-      document.getElementById('submit').innerHTML = '<div class="loader hide"></div><div class="load"><div class="loader"></div></div>'
-      var q = 'videos?q=' + decodeURI(JSON.stringify({ ytid: objectParams.id }))
+    var q = 'videos?q=' + decodeURI(JSON.stringify({ ytid: objectParams.id }))
 
-      db.get(q, function(xhr) {
-        var res = JSON.parse(xhr.response)[0]
+    document.getElementById('dl').style.display = 'none'
+
+    db.get(q, function(xhr) {
+      var res = JSON.parse(xhr.response)[0]
+
+      if (res.url == 'https://youtube.com/watch?v=' + res.ytid) {
+        document.getElementById('dl').style.display = 'none'
+      } else {
+        document.getElementById('dl').style.display = 'block'
+      }
+
+      document.getElementById('submit').addEventListener('click', function() {
+        document.getElementById('submit').innerHTML = '<div class="loader hide"></div><div class="load"><div class="loader"></div></div>'
 
         if (document.getElementById('password').value == res.pw) {
           document.querySelector('.block-div').style.display = 'none'
@@ -66,6 +75,12 @@ if (params == '') {
         des.match(/#[A-z0-9_]+/g).forEach(function(str) {
           des = des.replace(str, '<a href="">' + str + '</a>')
         })
+        des.match(/(^|\s)(#[a-z\d-]+)/ig).forEach(function(str) {
+          des = des.replace(str, '<a href="">' + str + '</a>')
+        })
+        des.match(/#[a-z\d-]+/ig).forEach(function(str) {
+          des = des.replace(str, '<a href="">' + str + '</a>')
+        })
 
         des = des.replaceAll('<br/><br/><br/>', '<br/>')
         des = des.replaceAll('<br/><br/>', '<br/>')
@@ -97,5 +112,5 @@ document.querySelector('.form-center').style.display = 'none'
 document.getElementById('dl').onclick = function() {
   document.querySelector('.block-div').style.display = 'block'
   document.querySelector('.form-center').style.display = 'block'
-  document.body.style.overflow = 'hidden'
+  document.body.style.overflow = 'scroll'
 }
