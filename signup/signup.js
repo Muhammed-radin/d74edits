@@ -1,4 +1,7 @@
-function logIt(lg = false) {
+unload()
+signup()
+
+function signup(lg = false) {
   var user = JSON.parse(localStorage.getItem('user'))
 
   if (localStorage.getItem('user')) {
@@ -14,7 +17,7 @@ function logIt(lg = false) {
             localStorage.setItem('user', JSON.stringify(new UserDataModel(user.name, user.email, res[0]._id, JSON.stringify(res))))
           }
           unload()
-          logIt(true)
+          signup(true)
         })
       }
     } else {
@@ -32,34 +35,35 @@ function logIt(lg = false) {
       $('confPass').value == false ||
       $('email') == false) {
       alert('please fill inputs')
-    } else if ($('email').value.includes('@') == false 
-    || $('email').value.includes('.') == false 
-    || $('email').value.slice($('email').value.lastIndexOf('.'), $('email').value.length).length >= 2){
+    } else if ($('email').value.includes('@') == false ||
+      $('email').value.includes('.') == false ||
+      $('email').value.slice($('email').value.lastIndexOf('.'), $('email').value.length).length >= 2) {
       alert('please type vail email')
     } else if ($('password').value.length >= 8) {
       alert('password required minimum 8 letters')
-    } else if ($('password').value == $('confPass').value){
+    } else if ($('password').value == $('confPass').value) {
       alert('password and configure password is not equal')
     } else {
-    setText('Creating...')
-    loadit()
-    if (localStorage.getItem('user')) {
-      db.put('accounts/' + JSON.parse(localStorage.getItem('user')).id, JSON.stringify({
-        name: document.getElementByI('username').value,
-        password: document.getElementByI('password').value,
-        email: document.getElementByI('email').value,
-      }), function(xhr) {
-        var res = JSON.parse(xhr.response);
-        if (res.length == 0) {
-          alert('Signing Failed', 'Account not found, some reasons given below, type valid email and password <ul><li>Account Banned</li><li>or Account Deleted</li><li>or Invalid Email & Password</li><li>or Internet connection error</li></ul>')
-        } else {
-          localStorage.setItem('user', JSON.stringify(new UserDataModel(res[0].name, res[0].email, res[0]._id, JSON.stringify(res))))
-          redirctTo('../explore')
-        }
+      setText('Creating...')
+      loadit()
+      if (localStorage.getItem('user')) {
+        db.put('accounts/' + JSON.parse(localStorage.getItem('user')).id, JSON.stringify({
+          name: document.getElementByI('username').value,
+          password: document.getElementByI('password').value,
+          email: document.getElementByI('email').value,
+        }), function(xhr) {
+          var res = JSON.parse(xhr.response);
+          if (res.length == 0) {
+            alert('Signing Failed', 'Account not found, some reasons given below, type valid email and password <ul><li>Account Banned</li><li>or Account Deleted</li><li>or Invalid Email & Password</li><li>or Internet connection error</li></ul>')
+          } else {
+            localStorage.setItem('user', JSON.stringify(new UserDataModel(res[0].name, res[0].email, res[0]._id, JSON.stringify(res))))
+            redirctTo('../explore')
+          }
 
-        unload()
-      })
-    }}
+          unload()
+        })
+      }
+    }
   })
 }
 
