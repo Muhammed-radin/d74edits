@@ -75,9 +75,6 @@ if (params == '') {
         des.match(/#[A-z0-9_]+/g).forEach(function(str) {
           des = des.replace(str, '<a href="">' + str + '</a>')
         })
-        des.match(/(^|\s)(#[a-z\d-]+)/ig).forEach(function(str) {
-          des = des.replace(str, '<a href="">' + str + '</a>')
-        })
         des.match(/#[a-z\d-]+/ig).forEach(function(str) {
           des = des.replace(str, '<a href="">' + str + '</a>')
         })
