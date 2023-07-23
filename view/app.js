@@ -1,4 +1,9 @@
-var nowUrl = ''
+if (nowUrl) {
+
+} else {
+  var nowUrl = ''
+  nowUrl = ''
+}
 
 function addScript(path) {
   var script = document.createElement('script')
