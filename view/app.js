@@ -11,7 +11,12 @@ function addScript(path) {
   document.body.appendChild(script)
 }
 
-var heading = "D74 Edits"
+if (heading) {
+
+} else {
+  var heading = "D74 Edits"
+  heading = 'D74 Edits'
+}
 addScript('../veiw/alert.js');
 //addScript('../view/d74.js');
 
