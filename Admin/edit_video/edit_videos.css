@@ -16,7 +16,8 @@ body {
   min-width: 50%;
   max-height: 60%;
   background: #ffffff;
-  box-shadow: 0 0 10px #33333350
+  box-shadow: 0 0 10px #33333350;
+  overflow: scroll
 }
 
 .form-center img {
