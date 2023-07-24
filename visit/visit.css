@@ -94,6 +94,29 @@ img {
   font-size: 12px;
 }
 
+.loader-bg {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 1rem;
+  /*width: 100px;
+  height: 100px;*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #33333350
+}
+
+.loader {
+  width: 55px;
+  height: 55px;
+  animation: spin 2s infinite;
+  border: 3px solid var(--blue);
+  border-radius: 50%;
+  border-top: 3px solid transparent;
+}
+
+
 .para {
   margin: 0.3rem;
   overflow-wrap: break-word;
@@ -154,10 +177,12 @@ img {
   transform: translate(-50%, -50%);
   padding: 0.5rem;
   border-radius: 20px;
-  min-width: 50%;
+  min-width: 40%;
+  max-width: 45%;
   max-height: 60%;
   background: #ffffff;
-  box-shadow: 0 0 10px #33333350
+  box-shadow: 0 0 10px #33333350;
+  animation: showInBottomCenter 1s 1
 }
 
 .form-center .header {
@@ -203,8 +228,13 @@ button {
   margin-top: 0.5rem;
 }
 
+
+.form-center button {
+  width: 95%
+}
+
 .blue {
-    background: linear-gradient(to top, #4B63A7, #5A76C2);
+  background: linear-gradient(to top, #4B63A7, #5A76C2);
 }
 
 .body {
@@ -311,4 +341,16 @@ button:focus {
   transform: translate(-50%, -100%);
   position: absolute;
   left: 50%;
+}
+
+@keyframes showInBottomCenter {
+  0% {
+    transform: translate(-50%, 120%);
+    opacity: 0
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 100%;
+  }
 }

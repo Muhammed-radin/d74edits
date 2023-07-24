@@ -111,3 +111,20 @@ document.getElementById('dl').onclick = function() {
   document.querySelector('.form-center').style.display = 'block'
   document.body.style.overflow = 'scroll'
 }
+
+var animationRequiredElem = ['.primary-box', '.buttons', '.des']
+
+animationRequiredElem.forEach(function(elem, index) {
+  elem = document.querySelector(elem)
+  elem.animate([{
+    transform: "translate(-0%, 120%)",
+    opacity: '0'
+    }, {
+    transform: "translate(-0%, 0%)",
+    opacity: '100%'
+    }], {
+    duration: 800,
+    delay: 250 * index,
+    iterations: 1
+  })
+})
