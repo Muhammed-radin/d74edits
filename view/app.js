@@ -5,12 +5,12 @@ if (nowUrl) {
   nowUrl = ''
 }
 
-function hErr(e){
+function hErr(e) {
   alert(e);
 }
 
 window.onerror = hErr
-document.querySelectorAll('*').forEach(function(elem){
+document.querySelectorAll('*').forEach(function(elem) {
   elem.onerror = hErr
 })
 
@@ -130,13 +130,16 @@ if (document.querySelector('nav')) {
 
   document.querySelector('nav').animate([{
     borderRadius: '0px',
-    margin: '0px'
+    margin: '0px',
+    transform: 'translate(0, -100%)'
   }, {
     borderRadius: '4px',
-    margin: '8px'
+    margin: '8px',
+    transform: 'translate(0, -50%)'
   }, {
     borderRadius: '8px',
-    margin: '8px'
+    margin: '8px',
+    transform: 'translate(0, -0%)'
   }], {
     duration: 500,
     iterations: 1,

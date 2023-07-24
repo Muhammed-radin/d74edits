@@ -21,7 +21,9 @@ if (params == '') {
     db.get(q, function(xhr) {
       var res = JSON.parse(xhr.response)[0]
 
-      if (res.url == 'https://youtube.com/watch?v=' + res.ytid) {
+      document.getElementById('dl').style.display = 'none'
+
+      if (res.url == 'https://youtube.com/watch?v=' + res.ytid || res.url == '') {
         document.getElementById('dl').style.display = 'none'
       } else {
         document.getElementById('dl').style.display = 'block'
@@ -51,6 +53,10 @@ if (params == '') {
 
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
+        if (document.querySelector('.loader-bg')) {
+          document.querySelector('.loader-bg').style.display = 'none'
+        }
+
         var res = JSON.parse(this.response)
         var snippet = res.items[0].snippet
 

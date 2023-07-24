@@ -27,7 +27,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px #33333350
+  box-shadow: 0 0 2000px 1000px #33333350
 }
 
 .loader {
@@ -58,7 +58,8 @@ ion-icon {
   background: transparent;
   border-radius: 8px;
   width: 90%;
-  /*height: 36px*/;
+  /*height: 36px*/
+  ;
 }
 
 .block-div {
@@ -254,16 +255,16 @@ nav {
   .left-bar {
     width: 400px
   }
-  
+
   .load-btn {
     width: 360px;
   }
-  
+
   .load23 {
     margin-top: 1rem;
     margin-bottom: 10%;
   }
-  
+
   .card-title {
     height: 70px;
     overflow: hidden;
@@ -277,7 +278,7 @@ button {
 .load23 button:hover {
   background: var(--blue);
   color: #fff;
-} 
+}
 
 ion-icon:hover {
   color: var(--blue)
