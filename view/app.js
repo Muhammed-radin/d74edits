@@ -9,10 +9,10 @@ function hErr(e) {
   alert(e);
 }
 
-window.onerror = hErr
+/*window.onerror = hErr
 document.querySelectorAll('*').forEach(function(elem) {
   elem.onerror = hErr
-})
+})*/
 
 function addScript(path) {
   var script = document.createElement('script')
