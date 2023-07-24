@@ -4,7 +4,7 @@ if (params == '') {
   alert("File Not Found", "sorry, this id not found", function() {
     window.location.href = '../'
   })
-  window.location.href = '../'
+  window.location.href = '../' 
 } else {
   var objectParams = JSON.parse(paramsString);
   objectParams = objectParams
