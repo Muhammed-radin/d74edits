@@ -22,7 +22,13 @@ img {
 
 .subbar {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  position: relative;
+}
+
+.buttons, .subbar, .title {
+  margin-bottom: 0.6rem;
+  margin-top: 0.6rem;
 }
 
 .subtext {
@@ -34,7 +40,21 @@ img {
 }
 
 .subtext:nth-child(1) {
-  margin-left: 0.3rem;
+  margin-left: 20px;
+}
+
+.subtext:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  margin-left: 0.1rem;
+  transform: translate(-50%);
+}
+
+.subtext:nth-child(3) {
+  position: absolute;
+  right: 20px;
+  margin-left: 0.1rem;
+  transform: translate(0%);
 }
 
 .tags {
@@ -194,6 +214,17 @@ button {
   top: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
+}
+
+.subtext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtext ion-icon {
+  margin: 0.3rem;
 }
 
 .center-icon,

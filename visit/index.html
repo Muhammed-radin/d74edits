@@ -8,6 +8,8 @@
 
   <link rel="stylesheet" href="../view/app.css">
   <link rel="stylesheet" href="visit.css">
+  <link rel="stylesheet" href="loadtime.css">
+
   <script src="../view/alert.js"></script>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -52,12 +54,23 @@
       <div class="lq-box">
         <div class="title" id="title">Loading...</div>
         <div class="subbar">
-          <div class="subtext">D74 Edits</div>
-          <div class="subtext" id="date">00-00-0000</div>
-          <div class="subtext" id="views">Loading</div>
+          <div class="subtext">
+            <ion-icon name="person-outline"></ion-icon>
+            <div>D74 Edits</div>
+          </div>
+          <div class="subtext">
+            <ion-icon id="date" name="calendar-outline"></ion-icon>
+            <div>00-00-0000</div>
+          </div>
+          <div class="subtext">
+            <ion-icon name="stats-chart-outline"></ion-icon>
+            <div id="views">loading</div>
+          </div>
         </div>
-        <button class="btn" id="wt"><ion-icon name="play-circle"></ion-icon>Watch</button>
-        <button class="btn grn" id="dl"><ion-icon name="arrow-down"></ion-icon>Download</button>
+        <div class="buttons">
+          <button class="btn" id="wt"><ion-icon name="play-circle"></ion-icon>Watch</button>
+          <button class="btn grn" id="dl"><ion-icon name="arrow-down"></ion-icon>Download</button>
+        </div>
       </div>
     </div>
 
