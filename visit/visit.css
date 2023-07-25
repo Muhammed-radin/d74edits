@@ -178,6 +178,7 @@ img {
   min-width: 40%;
   max-width: 45%;
   max-height: 60%;
+  display: none;
   background: #ffffff;
   box-shadow: 0 0 10px #33333350;
   animation: showInBottomCenter 1s 1

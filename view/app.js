@@ -45,7 +45,9 @@ function redirctTo(url) {
 if (document.getElementById('loginLink')) {
   document.getElementById('loginLink').addEventListener('click', function() { redirctTo(nowUrl + '../login') })
 
-  if (localStorage.getItem('admin')) {
+  var user = JSON.parse(localStorage.getItem('user'))
+
+  if (localStorage.getItem('admin') || user.name.includes('guest') == false && user.email.includes('guest') == false) {
     document.getElementById('loginLink').style.display = 'none'
   }
 
