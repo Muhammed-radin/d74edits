@@ -16,7 +16,7 @@ if (params == '') {
 
     var q = 'videos?q=' + decodeURI(JSON.stringify({ ytid: objectParams.id }))
 
-    document.getElementById('dl').style.display = 'block'
+    document.getElementById('dl').style.display = 'none'
 
     db.get(q, function(xhr) {
       var res = JSON.parse(xhr.response)[0]
@@ -116,6 +116,7 @@ document.getElementById('dl').onclick = function() {
   document.querySelector('.block-div').style.display = 'block'
   document.querySelector('.form-center').style.display = 'block'
   document.body.style.overflow = 'scroll'
+  window.location.href = '#top'
 }
 
 var animationRequiredElem = ['.primary-box', '.buttons', '.des']
