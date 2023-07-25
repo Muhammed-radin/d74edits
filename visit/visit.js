@@ -42,7 +42,7 @@ if (params == '') {
           if (res.url.includes('ddl=true')) {
             var atag = document.createElement('a')
             atag.href = res.url
-            atag.download = res.title.replaceAll(' ', '_')+'.mp4'
+            atag.download = 'freeClip.mp4'
             atag.click()
           } else {
           window.location.href = res.url}
