@@ -30,7 +30,7 @@ if (params == '') {
       }
 
       document.getElementById('submit').addEventListener('click', function() {
-        document.getElementById('submit').innerHTML = '<div class="loader hide"></div><div class="load"><div class="loader"></div></div>'
+        document.getElementById('submit').innerHTML = '<div class="loader-sml hide"></div><div class="load"><div class="loader-sml"></div></div>'
 
         if (document.getElementById('password').value == res.pw) {
           document.querySelector('.block-div').style.display = 'none'
