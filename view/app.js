@@ -14,6 +14,13 @@ document.querySelectorAll('*').forEach(function(elem) {
   elem.onerror = hErr
 })*/
 
+if (localStorage.getItem('admin')) {
+  if (JSON.parse(localStorage.getItem('admin')).expaire == undefined) {
+    localStorage.removeItem('admin')
+    window.location.reload()
+  }
+}
+
 function addScript(path) {
   var script = document.createElement('script')
   script.src = nowUrl + path
