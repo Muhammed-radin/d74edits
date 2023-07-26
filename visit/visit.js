@@ -136,8 +136,8 @@ animationRequiredElem.forEach(function(elem, index) {
     transform: "translate(-0%, 0%)",
     opacity: '100%'
     }], {
-    duration: 800,
-    delay: 250 * index,
+    duration: 1350,
+    delay: 170 * index == 0 ? 2 * index,
     iterations: 1
   })
 })
