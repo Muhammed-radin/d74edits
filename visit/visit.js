@@ -137,7 +137,8 @@ animationRequiredElem.forEach(function(elem, index) {
     opacity: '100%'
     }], {
     duration: 1350,
-    delay: 170 * index == 0 ? 2 * index,
+    delay: 170 * (index == 0 ? 2 : index),
     iterations: 1
   })
 })
+
