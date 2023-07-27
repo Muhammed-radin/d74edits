@@ -283,3 +283,7 @@ button {
 ion-icon:hover {
   color: var(--blue)
 }
+
+.form-center {
+  overflow: scroll
+}
