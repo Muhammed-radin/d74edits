@@ -39,13 +39,18 @@ if (params == '') {
           document.documentElement.scrollTop = 0;
           document.body.style.overflow = 'scroll'
           document.getElementById('submit').innerHTML = 'Submit'
+          
+          if (localStorage.getItem('app')) {
+            confirm('opening in browser')
+            window.open(res.url)
+          } else {
           if (res.url.includes('ddl=true')) {
             var atag = document.createElement('a')
             atag.href = res.url
             atag.download = 'freeClip.mp4'
             atag.click()
           } else {
-          window.location.href = res.url}
+          window.location.href = res.url}}
         } else {
           alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube", function() {
             document.getElementById('submit').innerHTML = 'Submit'
