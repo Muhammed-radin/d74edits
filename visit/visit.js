@@ -79,7 +79,7 @@ if (params == '') {
         view = (view >= 1000 ? (view / 1000) >= 1000 ? Math.floor((view / 1000000)) + 'M Views' : Math.floor((view / 1000)) + 'K Views' : view + ' Views')
         document.getElementById('views').innerHTML = view
         document.getElementById('wt').onclick = function() {
-          window.location.href = 'https://youtube.com/watch?v=' + res.items[0].id
+          window.open('https://youtube.com/watch?v=' + res.items[0].id)
         }
 
         var des = snippet.description
@@ -135,7 +135,7 @@ var animationRequiredElem = ['.primary-box', '.buttons', '.des']
 animationRequiredElem.forEach(function(elem, index) {
   elem = document.querySelector(elem)
   elem.animate([{
-    transform: "translate(-0%, 120%)",
+    transform: "translate(-0%, 100%)",
     opacity: '0'
     }, {
     transform: "translate(-0%, 0%)",
