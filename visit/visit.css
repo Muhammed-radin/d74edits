@@ -313,6 +313,11 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-left: 0;
+  }
+
+  nav {
+    padding-left: 0.5rem;
   }
 }
 

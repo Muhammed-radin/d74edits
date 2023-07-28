@@ -187,23 +187,15 @@ if (document.querySelector('nav')) {
   }
 
   document.querySelector('nav').animate([{
-    borderRadius: '0px',
-    margin: '0px',
     transform: 'translate(0, -100%)'
   }, {
-    borderRadius: '4px',
-    margin: '8px',
     transform: 'translate(0, -50%)'
   }, {
-    borderRadius: '8px',
-    margin: '8px',
     transform: 'translate(0, -0%)'
   }], {
     duration: 500,
     iterations: 1,
   }).onfinish = function() {
-    document.querySelector('nav').style.borderRadius = '8px'
-    document.querySelector('nav').style.margin = '8px'
   }
 
   document.getElementById('menuOpener').onclick = function() {

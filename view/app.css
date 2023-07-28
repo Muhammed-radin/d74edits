@@ -144,7 +144,7 @@ a {
   bottom: 10px;
   left: 50%;
   transform: translate(-20%);
-  box-shadow: 0 0 15px 3px #88888850;
+  /*box-shadow: 0 0 15px 3px #88888850;*/
   width: max-content;
   background: var(--bg);
   z-index: 99;
@@ -271,6 +271,44 @@ nav {
   .card-title {
     height: 70px;
     overflow: hidden;
+  }
+  
+  .body, nav {
+    padding-left: 3.8rem;
+  }
+  
+  nav {
+    width: 99vw;
+    width: webkit-fill-available !important;
+  }
+  
+  .left-bar {
+    height: 99vh;
+    height: webkit-fill-available !important;
+  }
+  
+  .menu {
+    display: flex;flex-direction: column;
+    top: 0;
+    left: 0 !important;
+    width: 35px;
+    height: 100vh;
+    box-shadow: none;
+    position: fixed;
+    border-radius: 0;
+    transform: translate(0,0);
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 9
+  }
+  
+  .menu-icon {
+    margin-top: 2rem;
+  }
+  
+  .menu-icon:nth-child(1){
+    margin-top: 3rem;
   }
 }
 
