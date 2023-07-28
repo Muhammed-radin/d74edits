@@ -7,13 +7,15 @@ select {
   -moz-appearance: none;
   appearance: none;
   background: none;
-  border: none;outline: none;
+  border: none;
+  outline: none;
   color: var(--color)
 }
 
 .proper {
   position: relative;
-  display: flex;flex-direction: row;
+  display: flex;
+  flex-direction: row;
   padding: 0.8rem 0.5rem;
 }
 

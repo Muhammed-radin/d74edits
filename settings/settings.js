@@ -1,3 +1,7 @@
+if (localStorage.getItem('theme')) {
+  document.getElementById('theme').value = localStorage.getItem('theme')
+}
+
 document.getElementById('theme').onchange = function() {
   var style = document.createElement('style')
 
@@ -24,7 +28,7 @@ document.getElementById('theme').onchange = function() {
   --inverted-color: #111;
   --white: #fff;
   --black: #000;
-  --sec-bg: #555;
+  --sec-bg: #333;
 }
       `
   } else if (document.getElementById('theme').value == 'blue') {
@@ -37,10 +41,12 @@ document.getElementById('theme').onchange = function() {
   --inverted-color: #111;
   --white: #fff;
   --black: #000;
-  --sec-bg: #2A328A;
+  --sec-bg: #29307E;
 }
     `
   }
+  
+  localStorage.setItem('theme', document.getElementById('theme').value)
 
   document.head.appendChild(style)
 }
