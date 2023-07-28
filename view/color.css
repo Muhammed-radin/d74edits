@@ -1,3 +1,4 @@
+
 :root {
   --color: #111;
   --blue: #5A78CB;
@@ -8,3 +9,31 @@
   --black: #000;
   --sec-bg: #EEE;
 }
+
+
+/* blue
+:root {
+  --color: #fff;
+  --blue: #5A78CB;
+  --bg: #1C2157;
+  --sec-color: #eee;
+  --inverted-color: #111;
+  --white: #fff;
+  --black: #000;
+  --sec-bg: #2A328A;
+}
+*/
+
+/*
+
+:root {
+  --color: #fff;
+  --blue: #5A78CB;
+  --bg: #222;
+  --sec-color: #eee;
+  --inverted-color: #111;
+  --white: #fff;
+  --black: #000;
+  --sec-bg: #555;
+}
+*/

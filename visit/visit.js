@@ -40,8 +40,7 @@ if (params == '') {
           document.body.style.overflow = 'scroll'
           document.getElementById('submit').innerHTML = 'Submit'
           
-          if (localStorage.getItem('app')) {
-            confirm('opening in browser')
+          if (localStorage.getItem('app') || localStorage.getItem('appCH')) {
             window.open(res.url)
           } else {
           if (res.url.includes('ddl=true')) {

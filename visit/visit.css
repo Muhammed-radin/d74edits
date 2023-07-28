@@ -40,7 +40,7 @@ img {
 .buttons button {}
 
 .subtext {
-  color: #666;
+  color: var(--sec-color);
   font-style: 12px;
   margin: 0.3rem;
   margin-top: 0.6rem;

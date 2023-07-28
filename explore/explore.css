@@ -17,7 +17,7 @@ body {
 }
 
 .card-date {
-  color: #666;
+  color: var(--sec-color);
   position: absolute;
   right: 10px;
   top: 5px;

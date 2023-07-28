@@ -7,6 +7,8 @@ body {
   font-size: 13px;
   min-width: 100%;
   min-height: 100vh;
+  color: var(--color);
+  background-color: var(--sec-bg)
 }
 
 ::-webkit-scrollbar {
@@ -67,7 +69,7 @@ ion-icon {
   height: 1000vh;
   position: fixed;
   z-index: 999999999;
-  background: #fff;
+  background: var(--sec-bg);
   top: 0;
   left: 0;
   display: none;
@@ -157,7 +159,7 @@ a {
 }
 
 nav {
-  color: var(--black);
+  color: var(--color);
   padding: 0.5rem;
   font-size: 16px;
   display: flex;
@@ -167,12 +169,13 @@ nav {
   left: 0;
   z-index: 99;
   flex-direction: row;
-  background: #ffffff80;
+  background: var(--bg);
+  opacity: 80%;
   backdrop-filter: blur(2px)
 }
 
 .left-bar {
-  background: #fff;
+  background: var(--bg);
   padding: 0.1rem;
   font-size: 16px;
   position: fixed;
@@ -285,5 +288,25 @@ ion-icon:hover {
 }
 
 .form-center {
-  overflow: scroll
+  overflow: scroll;
+  min-width: 40%;
+  max-width: 45%;
+  max-height: 60%;
+  background: var(--bg) !important;
+  color: var(--color) !important;
+}
+
+@media screen and (max-width: 600px) {
+  .form-center {
+    min-width: 80%;
+    overflow: scroll;
+    max-height: 60%;
+    padding-bottom: 1.4rem;
+    color: var(--color) !important;
+    background: var(--bg) !important;
+  }
+}
+
+input:disabled {
+  color: var(--color);
 }
