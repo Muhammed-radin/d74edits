@@ -7,7 +7,7 @@
   <title>D74 Edits | Settings</title>
 
   <link rel="stylesheet" href="../view/app.css">
-  <link rel="stylesheet" href="explore.css">
+  <link rel="stylesheet" href="settings.css">
 
   <script src="../view/alert.js"></script>
 
@@ -48,6 +48,17 @@
   </div>
 
   <div class="body">
+    <h3>Appearance</h3>
+    <div class="proper" onclick="document.getElementById('theme').click()">
+      Theme
+      <div class="right">
+        <select name="theme" id="theme">
+          <option value="light">light</option>
+          <option value="blue">blue</option>
+          <option value="dark">dark</option>
+        </select>
+      </div>
+    </div>
   </div>
 
 
@@ -67,9 +78,9 @@
     </div>
   </div>
 
-<script>
-  heading = 'D74 Edits <b>Settings</b>'
-</script>
+  <script>
+    heading = 'D74 Edits <b>Settings</b>'
+  </script>
   <script src="../view/app.js"></script>
   <script src="../view/d74.js"></script>
   <script src="settings.js"></script>
