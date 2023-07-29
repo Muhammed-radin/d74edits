@@ -8,7 +8,6 @@ body {
   min-width: 100%;
   min-height: 100vh;
   color: var(--color);
-  overflow: hidden;
   background-color: var(--sec-bg)
 }
 
