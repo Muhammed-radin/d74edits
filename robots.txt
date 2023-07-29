@@ -1,4 +1,11 @@
+# This robots.txt file controls crawling of URLs under https://example.com.
+# All crawlers are disallowed to crawl files in the "includes" directory, such
+# as .css, .js, but Google needs them for rendering, so Googlebot is allowed
+# to crawl them.
 User-agent: *
-Disallow: /Admin/
-Allow: /explore/index.html
+Disallow: /explore/
+
+User-agent: Googlebot
+Allow: /explore/
+
 Sitemap: https://muhammed-radin.github.io/d74edits/sitemap.xml
