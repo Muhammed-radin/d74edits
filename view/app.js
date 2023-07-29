@@ -220,7 +220,7 @@ if (document.querySelector('nav')) {
 
 setInterval(function() {
   if (document.querySelector('.menu')) {
-    document.querySelector('.menu').style.left = (window.innerWidth / 2) - (document.querySelector('.menu').offsetWidth / 3) + 'px'
+    //document.querySelector('.menu').style.left = (window.innerWidth / 2) - (document.querySelector('.menu').offsetWidth / 3) + 'px'
   }
 }, 50)
 
