@@ -7,9 +7,9 @@ if (nowUrl) {
 
 if (localStorage.getItem('theme')) {
   var value = localStorage.getItem('theme')
-  
+
   var style = document.createElement('style')
-  
+
   if (value == 'light') {
     style.innerHTML = `
       :root {
@@ -50,18 +50,18 @@ if (localStorage.getItem('theme')) {
   }
       `
   }
-  
+
   document.head.appendChild(style)
 }
 
 function hErr(e) {
-  alert(e);
+  
 }
 
-/*window.onerror = hErr
+window.onerror = hErr
 document.querySelectorAll('*').forEach(function(elem) {
   elem.onerror = hErr
-})*/
+})
 
 if (localStorage.getItem('admin')) {
   if (JSON.parse(localStorage.getItem('admin')).expaire == undefined) {
@@ -94,13 +94,15 @@ function redirctTo(url) {
 if (document.getElementById('loginLink')) {
   document.getElementById('loginLink').addEventListener('click', function() { redirctTo(nowUrl + '../login') })
 
-  var user = JSON.parse(localStorage.getItem('user'))
+  if (localStorage.getItem('user')) {
+    var user = JSON.parse(localStorage.getItem('user'))
 
-  if (localStorage.getItem('admin') || user.name.includes('guest') == false && user.email.includes('guest') == false) {
-    document.getElementById('loginLink').style.display = 'none'
+    if (localStorage.getItem('admin') || user.name.includes('guest') == false && user.email.includes('guest') == false) {
+      document.getElementById('loginLink').style.display = 'none'
+    }
   }
 
-  if (JSON.parse(localStorage.getItem('user'))) {
+  if (localStorage.getItem('user')) {
     if (JSON.parse(localStorage.getItem('user')).name.includes('guest')) {
       document.getElementById('loginLink').style.display = 'block'
     }
@@ -195,8 +197,7 @@ if (document.querySelector('nav')) {
   }], {
     duration: 500,
     iterations: 1,
-  }).onfinish = function() {
-  }
+  }).onfinish = function() {}
 
   document.getElementById('menuOpener').onclick = function() {
     document.querySelector('.left-bar').style.display = 'block'
@@ -217,10 +218,10 @@ if (document.querySelector('nav')) {
   }
 }
 
-setInterval(function(){
-if (document.querySelector('.menu')) {
-  document.querySelector('.menu').style.left = (window.innerWidth / 2) -(document.querySelector('.menu').offsetWidth / 3)+'px'
-}
+setInterval(function() {
+  if (document.querySelector('.menu')) {
+    document.querySelector('.menu').style.left = (window.innerWidth / 2) - (document.querySelector('.menu').offsetWidth / 3) + 'px'
+  }
 }, 50)
 
 if (localStorage.getItem('user')) {
