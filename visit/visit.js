@@ -4,7 +4,7 @@ if (params == '') {
   alert("File Not Found", "sorry, this id not found", function() {
     window.location.href = '../'
   })
-  window.location.href = '../' 
+  window.location.href = '../'
 } else {
   var objectParams = JSON.parse(paramsString);
   objectParams = objectParams
@@ -39,17 +39,19 @@ if (params == '') {
           document.documentElement.scrollTop = 0;
           document.body.style.overflow = 'scroll'
           document.getElementById('submit').innerHTML = 'Submit'
-          
+
           if (localStorage.getItem('app') || localStorage.getItem('appCH')) {
             window.open(res.url)
           } else {
-          if (res.url.includes('ddl=true')) {
-            var atag = document.createElement('a')
-            atag.href = res.url
-            atag.download = 'freeClip.mp4'
-            atag.click()
-          } else {
-          window.location.href = res.url}}
+            if (res.url.includes('ddl=true')) {
+              var atag = document.createElement('a')
+              atag.href = res.url
+              atag.download = 'freeClip.mp4'
+              atag.click()
+            } else {
+              window.location.href = res.url
+            }
+          }
         } else {
           alert("Wrong Password!", "Didn't get your password? Watch the full video on YouTube", function() {
             document.getElementById('submit').innerHTML = 'Submit'
@@ -142,7 +144,7 @@ animationRequiredElem.forEach(function(elem, index) {
     }], {
     duration: 1350,
     delay: 170 * (index == 0 ? 2 : index),
-    iterations: 1
+    iterations: 1,
+    easing: 'ease'
   })
 })
-
