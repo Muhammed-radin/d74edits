@@ -348,3 +348,7 @@ ion-icon:hover {
 input:disabled {
   color: var(--color);
 }
+
+.white-link {
+  color: var(--color);
+}
