@@ -68,6 +68,7 @@ nav input {
   box-shadow: 0 0 50px 4000px #33333390;
   z-index: 999;
   width: 70%;
+  animation: startfrombottom 0.3s 1;
   display: none;
 }
 
@@ -122,7 +123,7 @@ nav input {
     width: 60%;
     height: 60vh;
   }
-  
+
   .null-search {
     left: 55%;
   }
