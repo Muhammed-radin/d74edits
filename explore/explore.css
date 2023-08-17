@@ -104,3 +104,7 @@ body {
     width: 290px;
   }
 }
+
+.google-text {
+  display: none;
+}
