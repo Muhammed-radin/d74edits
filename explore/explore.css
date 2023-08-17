@@ -106,5 +106,6 @@ body {
 }
 
 .google-text {
-  display: none;
+  position: fixed;
+  opacity: 0
 }
